@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadStock - Pipeline</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8F9FC] text-gray-800 flex h-screen overflow-hidden">
+
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="w-64 bg-[#0B0E2A] text-gray-400 flex flex-col justify-between h-full flex-shrink-0">
+        <div>
+            <!-- Logo -->
+            <div class="p-6 flex items-center gap-2 text-white font-bold text-xl border-b border-gray-800">
+                <div class="bg-indigo-600 p-2 rounded-lg text-white">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span>LeadStock</span>
+            </div>
+
+            <!-- Menu de Navegação -->
+            <nav class="p-4 space-y-1 text-sm font-medium">
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard
+                </a>
+                <a href="#"
+                    class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="users" class="w-4 h-4"></i> Leads
+                    </div>
+                </a>
+                <a href="#"
+                    class="flex items-center justify-between px-3 py-2.5 bg-indigo-600 text-white rounded-lg transition">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="git-branch" class="w-4 h-4"></i> Pipeline
+                    </div>
+                </a>
+                <a href="#"
+                    class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Inbox
+                    </div>
+                    <span class="bg-indigo-600 text-white text-xs px-2 py-0.5 rounded-full">12</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="package" class="w-4 h-4"></i> Estoque
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i> Produtos
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="user-check" class="w-4 h-4"></i> Clientes
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Relatórios
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="cpu" class="w-4 h-4"></i> IA / Automação
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="settings" class="w-4 h-4"></i> Configurações
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="users-2" class="w-4 h-4"></i> Usuários
+                </a>
+            </nav>
+        </div>
+
+        <!-- Perfil na Sidebar -->
+        <div class="p-4 border-t border-gray-800 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-9 h-9 rounded-full bg-indigo-500 flex items-center justify-center text-white font-semibold text-sm">
+                    AD
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-white leading-tight">Administrador</p>
+                    <p class="text-xs text-gray-500">admin@leadstock.com</p>
+                </div>
+            </div>
+            <i data-lucide="chevron-up" class="w-4 h-4 text-gray-500"></i>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="flex-1 flex flex-col h-full overflow-hidden">
+
+        <!-- BARRA SUPERIOR (HEADER) -->
+        <header class="bg-white border-b border-gray-200 h-16 flex items-center justify-between px-8 flex-shrink-0">
+            <div class="flex items-center gap-4 w-1/3">
+                <i data-lucide="menu" class="w-5 h-5 text-gray-500 cursor-pointer"></i>
+                <div class="relative w-full">
+                    <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-3"></i>
+                    <input type="text" placeholder="Buscar leads..."
+                        class="w-full bg-gray-50 border border-gray-200 rounded-lg pl-9 pr-12 py-2 text-sm focus:outline-none focus:border-indigo-500">
+                    <span
+                        class="absolute right-3 top-2.5 text-xs text-gray-400 border border-gray-200 px-1.5 py-0.5 rounded bg-white">Ctrl
+                        + K</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span> Online
+                </div>
+                <div class="relative cursor-pointer">
+                    <i data-lucide="bell" class="w-5 h-5 text-gray-600"></i>
+                    <span
+                        class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">5</span>
+                </div>
+                <i data-lucide="moon" class="w-5 h-5 text-gray-600 cursor-pointer"></i>
+                <div class="flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">
+                        AD</div>
+                    <div class="text-xs">
+                        <p class="font-semibold text-gray-800">Administrador</p>
+                        <p class="text-gray-400">Administrador</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ÁREA INTERNA (SCROLLABLE) -->
+        <main class="flex-1 overflow-y-auto p-8 space-y-6 flex flex-col h-full">
+
+            <!-- TÍTULO E BOTÕES DE AÇÃO -->
+            <div class="flex justify-between items-start flex-shrink-0">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">Pipeline</h1>
+                    <p class="text-sm text-gray-500 mt-1">Acompanhe o funil de vendas e mova os leads entre as etapas
+                    </p>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="flex items-center gap-2 border border-gray-200 bg-white px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        <i data-lucide="kanban-square" class="w-4 h-4 text-indigo-600"></i> Visualização: Kanban <i
+                            data-lucide="chevron-down" class="w-3 h-3"></i>
+                    </button>
+                    <button
+                        class="flex items-center gap-2 border border-gray-200 bg-white px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        <i data-lucide="sliders-horizontal" class="w-4 h-4"></i> Filtros
+                    </button>
+                    <button
+                        class="flex items-center gap-2 bg-indigo-600 px-4 py-2 rounded-lg text-sm font-medium text-white hover:bg-indigo-700">
+                        <i data-lucide="plus" class="w-4 h-4"></i> Novo Lead
+                    </button>
+                </div>
+            </div>
+
+            <!-- FILTRO DE RESPONSÁVEIS E MÉTRICAS GERAIS -->
+            <div
+                class="flex justify-between items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex-shrink-0">
+                <button
+                    class="flex items-center gap-2 border border-gray-200 bg-white px-3 py-1.5 rounded-lg text-xs font-medium text-gray-600 hover:bg-gray-50">
+                    <i data-lucide="user" class="w-3.5 h-3.5"></i> Todos os responsáveis <i data-lucide="chevron-down"
+                        class="w-3 h-3"></i>
+                </button>
+
+                <div class="flex items-center gap-8 text-right pr-4">
+                    <div class="border-r border-gray-100 pr-8">
+                        <p class="text-[11px] text-gray-400 font-medium uppercase tracking-wider">Total de leads</p>
+                        <p class="text-lg font-bold text-gray-800">68 <span
+                                class="text-xs font-normal text-gray-400 ml-1">R$ 287.450,00</span></p>
+                    </div>
+                    <div class="border-r border-gray-100 pr-8">
+                        <p class="text-[11px] text-gray-400 font-medium uppercase tracking-wider">Valor total</p>
+                        <p class="text-lg font-bold text-blue-600">R$ 287.450,00</p>
+                    </div>
+                    <div>
+                        <p class="text-[11px] text-gray-400 font-medium uppercase tracking-wider">Conversão</p>
+                        <p class="text-lg font-bold text-green-600">18% <span
+                                class="text-xs font-normal text-gray-400 ml-1">12 leads</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROCESSO KANBAN (COLUNAS) -->
+            <div class="flex-1 grid grid-cols-5 gap-4 overflow-x-auto items-start pb-4">
+
+                <!-- COLUNA 1: NOVO -->
+                <div class="bg-[#F1F2F7] p-3 rounded-xl flex flex-col max-h-full min-w-[240px]">
+                    <div class="flex justify-between items-center mb-3 px-1">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-purple-600"></span>
+                            <span class="font-semibold text-xs text-gray-700">Novo</span>
+                            <span
+                                class="bg-gray-200 text-gray-500 text-[10px] px-1.5 py-0.5 rounded-md font-bold">12</span>
+                        </div>
+                        <span class="text-xs font-bold text-purple-700">R$ 27.300,00</span>
+                    </div>
+
+                    <!-- Lista de Cards -->
+                    <div class="space-y-2.5 overflow-y-auto flex-1 pr-0.5">
+                        <!-- Card 1 -->
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-2">
+                                    <div
+                                        class="w-7 h-7 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center font-bold text-[10px]">
+                                        JS</div>
+                                    <div>
+                                        <h4 class="font-bold text-xs text-gray-800">João Silva</h4>
+                                        <p class="text-[10px] text-gray-400">Silva Imports LTDA</p>
+                                    </div>
+                                </div>
+                                <i data-lucide="message-square" class="w-3.5 h-3.5 text-green-500"></i>
+                            </div>
+                            <div class="flex justify-between items-center pt-1">
+                                <span class="font-bold text-xs text-gray-800">R$ 5.000,00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] text-gray-400">
+                                <span
+                                    class="bg-purple-50 text-purple-700 px-1.5 py-0.5 rounded font-medium">WhatsApp</span>
+                                <span>há 10 min</span>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-2">
+                                    <div
+                                        class="w-7 h-7 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-[10px]">
+                                        MC</div>
+                                    <div>
+                                        <h4 class="font-bold text-xs text-gray-800">Mariana Costa</h4>
+                                        <p class="text-[10px] text-gray-400">Costa Comércio</p>
+                                    </div>
+                                </div>
+                                <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-500"></i>
+                            </div>
+                            <div class="flex justify-between items-center pt-1">
+                                <span class="font-bold text-xs text-gray-800">R$ 3.800,00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] text-gray-400">
+                                <span class="bg-red-50 text-red-600 px-1.5 py-0.5 rounded font-medium">Instagram</span>
+                                <span>há 30 min</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="mt-3 w-full text-center py-2 text-xs font-semibold text-purple-700 hover:bg-gray-200 rounded-lg flex items-center justify-center gap-1">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i> Adicionar lead
+                    </button>
+                </div>
+
+                <!-- COLUNA 2: QUALIFICAÇÃO -->
+                <div class="bg-[#F1F2F7] p-3 rounded-xl flex flex-col max-h-full min-w-[240px]">
+                    <div class="flex justify-between items-center mb-3 px-1">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                            <span class="font-semibold text-xs text-gray-700">Qualificação</span>
+                            <span
+                                class="bg-gray-200 text-gray-500 text-[10px] px-1.5 py-0.5 rounded-md font-bold">15</span>
+                        </div>
+                        <span class="text-xs font-bold text-blue-700">R$ 68.750,00</span>
+                    </div>
+
+                    <div class="space-y-2.5 overflow-y-auto flex-1 pr-0.5">
+                        <!-- Card 1 -->
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-2">
+                                    <div class="w-7 h-7 rounded-full bg-gray-300"></div>
+                                    <div>
+                                        <h4 class="font-bold text-xs text-gray-800">Beatriz Lima</h4>
+                                        <p class="text-[10px] text-gray-400">Beatriz Presentes</p>
+                                    </div>
+                                </div>
+                                <i data-lucide="message-square" class="w-3.5 h-3.5 text-green-500"></i>
+                            </div>
+                            <div class="flex justify-between items-center pt-1">
+                                <span class="font-bold text-xs text-gray-800">R$ 12.300,00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] text-gray-400">
+                                <span
+                                    class="bg-green-50 text-green-700 px-1.5 py-0.5 rounded font-medium">WhatsApp</span>
+                                <span>há 20 min</span>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-2">
+                                    <div class="w-7 h-7 rounded-full bg-gray-300"></div>
+                                    <div>
+                                        <h4 class="font-bold text-xs text-gray-800">Lucas Mendes</h4>
+                                        <p class="text-[10px] text-gray-400">Mendes Soluções</p>
+                                    </div>
+                                </div>
+                                <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-500"></i>
+                            </div>
+                            <div class="flex justify-between items-center pt-1">
+                                <span class="font-bold text-xs text-gray-800">R$ 10.000,00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] text-gray-400">
+                                <span class="bg-red-50 text-red-600 px-1.5 py-0.5 rounded font-medium">Instagram</span>
+                                <span>há 1 h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="mt-3 w-full text-center py-2 text-xs font-semibold text-blue-700 hover:bg-gray-200 rounded-lg flex items-center justify-center gap-1">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i> Adicionar lead
+                    </button>
+                </div>
+
+                <!-- COLUNA 3: PROPOSTA -->
+                <div class="bg-[#F1F2F7] p-3 rounded-xl flex flex-col max-h-full min-w-[240px]">
+                    <div class="flex justify-between items-center mb-3 px-1">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                            <span class="font-semibold text-xs text-gray-700">Proposta</span>
+                            <span
+                                class="bg-gray-200 text-gray-500 text-[10px] px-1.5 py-0.5 rounded-md font-bold">10</span>
+                        </div>
+                        <span class="text-xs font-bold text-orange-600">R$ 92.400,00</span>
+                    </div>
+
+                    <div class="space-y-2.5 overflow-y-auto flex-1 pr-0.5">
+                        <!-- Card 1 -->
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-2">
+                                    <div class="w-7 h-7 rounded-full bg-gray-300"></div>
+                                    <div>
+                                        <h4 class="font-bold text-xs text-gray-800">Carlos Pereira</h4>
+                                        <p class="text-[10px] text-gray-400">Pereira Atacadista</p>
+                                    </div>
+                                </div>
+                                <i data-lucide="message-square" class="w-3.5 h-3.5 text-green-500"></i>
+                            </div>
+                            <div class="flex justify-between items-center pt-1">
+                                <span class="font-bold text-xs text-gray-800">R$ 15.600,00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] text-gray-400">
+                                <span
+                                    class="bg-green-50 text-green-700 px-1.5 py-0.5 rounded font-medium">WhatsApp</span>
+                                <span>há 2 h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="mt-3 w-full text-center py-2 text-xs font-semibold text-orange-600 hover:bg-gray-200 rounded-lg flex items-center justify-center gap-1">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i> Adicionar lead
+                    </button>
+                </div>
+
+                <!-- COLUNA 4: NEGOCIAÇÃO -->
+                <div class="bg-[#F1F2F7] p-3 rounded-xl flex flex-col max-h-full min-w-[240px]">
+                    <div class="flex justify-between items-center mb-3 px-1">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                            <span class="font-semibold text-xs text-gray-700">Negociação</span>
+                            <span
+                                class="bg-gray-200 text-gray-500 text-[10px] px-1.5 py-0.5 rounded-md font-bold">6</span>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-700">R$ 61.450,00</span>
+                    </div>
+
+                    <div class="space-y-2.5 overflow-y-auto flex-1 pr-0.5">
+                        <!-- Card 1 -->
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-2">
+                                    <div class="w-7 h-7 rounded-full bg-gray-300"></div>
+                                    <div>
+                                        <h4 class="font-bold text-xs text-gray-800">Daniel Martins</h4>
+                                        <p class="text-[10px] text-gray-400">Martins Industrial</p>
+                                    </div>
+                                </div>
+                                <i data-lucide="message-square" class="w-3.5 h-3.5 text-green-500"></i>
+                            </div>
+                            <div class="flex justify-between items-center pt-1">
+                                <span class="font-bold text-xs text-gray-800">R$ 20.000,00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] text-gray-400">
+                                <span
+                                    class="bg-green-50 text-green-700 px-1.5 py-0.5 rounded font-medium">WhatsApp</span>
+                                <span>há 1 h</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="mt-3 w-full text-center py-2 text-xs font-semibold text-emerald-700 hover:bg-gray-200 rounded-lg flex items-center justify-center gap-1">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i> Adicionar lead
+                    </button>
+                </div>
+
+                <!-- COLUNA 5: GANHO -->
+                <div class="bg-[#F1F2F7] p-3 rounded-xl flex flex-col max-h-full min-w-[240px]">
+                    <div class="flex justify-between items-center mb-3 px-1">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            <span class="font-semibold text-xs text-gray-700">Ganho</span>
+                            <span
+                                class="bg-gray-200 text-gray-500 text-[10px] px-1.5 py-0.5 rounded-md font-bold">8</span>
+                        </div>
+                        <span class="text-xs font-bold text-green-600">R$ 37.550,00</span>
+                    </div>
+
+                    <div class="space-y-2.5 overflow-y-auto flex-1 pr-0.5">
+                        <!-- Card 1 -->
+                        <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-2">
+                                    <div
+                                        class="w-7 h-7 rounded-full bg-green-50 text-green-600 flex items-center justify-center font-bold text-[10px]">
+                                        <i data-lucide="building-2" class="w-3.5 h-3.5"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-xs text-gray-800">Empresa ABC Ltda</h4>
+                                    </div>
+                                </div>
+                                <i data-lucide="message-square" class="w-3.5 h-3.5 text-green-500"></i>
+                            </div>
+                            <div class="flex justify-between items-center pt-1">
+                                <span class="font-bold text-xs text-gray-800">R$ 12.500,00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[10px] text-gray-400">
+                                <span
+                                    class="bg-green-50 text-green-700 px-1.5 py-0.5 rounded font-medium">WhatsApp</span>
+                                <span>Ganho em 01/07</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="mt-3 w-full text-center py-2 text-xs font-semibold text-green-600 hover:bg-gray-200 rounded-lg flex items-center justify-center gap-1">
+                        <i data-lucide="plus" class="w-3.5 h-3.5"></i> Adicionar lead
+                    </button>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Script Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadStock - IA / Automação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8F9FC] text-gray-800 flex h-screen overflow-hidden">
+
+    <aside class="w-64 bg-[#0B0E2A] text-gray-400 flex flex-col justify-between h-full flex-shrink-0">
+        <div>
+            <div class="p-6 flex items-center gap-2 text-white font-bold text-xl border-b border-gray-800">
+                <div class="bg-indigo-600 p-2 rounded-lg text-white">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span>LeadStock</span>
+            </div>
+
+            <nav class="p-4 space-y-1 text-sm font-medium">
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="users" class="w-4 h-4"></i> Leads
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="git-branch" class="w-4 h-4"></i> Pipeline
+                </a>
+                <a href="#"
+                    class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Inbox
+                    </div>
+                    <span class="bg-indigo-600 text-white text-xs px-2 py-0.5 rounded-full">12</span>
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="package" class="w-4 h-4"></i> Estoque
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i> Produtos
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="user-check" class="w-4 h-4"></i> Clientes
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Relatórios
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 bg-indigo-600 text-white rounded-lg transition">
+                    <i data-lucide="cpu" class="w-4 h-4"></i> IA / Automação
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="settings" class="w-4 h-4"></i> Configurações
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="users-2" class="w-4 h-4"></i> Usuários
+                </a>
+            </nav>
+        </div>
+
+        <div class="p-4 border-t border-gray-800 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-9 h-9 rounded-full bg-indigo-500 flex items-center justify-center text-white font-semibold text-sm">
+                    AD
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-white leading-tight">Administrador</p>
+                    <p class="text-xs text-gray-500">admin@leadstock.com</p>
+                </div>
+            </div>
+            <i data-lucide="chevron-up" class="w-4 h-4 text-gray-500"></i>
+        </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col h-full overflow-hidden">
+
+        <header class="bg-white border-b border-gray-200 h-16 flex items-center justify-between px-8 flex-shrink-0">
+            <div class="flex items-center gap-4 w-1/3">
+                <i data-lucide="menu" class="w-5 h-5 text-gray-500 cursor-pointer"></i>
+                <div class="relative w-full">
+                    <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-3"></i>
+                    <input type="text" placeholder="Buscar agentes, gatilhos ou fluxos..."
+                        class="w-full bg-gray-50 border border-gray-200 rounded-lg pl-9 pr-12 py-2 text-sm focus:outline-none focus:border-indigo-500">
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                    <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span> Copiloto de IA Ativo
+                </div>
+                <div class="relative cursor-pointer">
+                    <i data-lucide="bell" class="w-5 h-5 text-gray-600"></i>
+                    <span
+                        class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">5</span>
+                </div>
+                <i data-lucide="moon" class="w-5 h-5 text-gray-600 cursor-pointer"></i>
+                <div class="flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">
+                        AD</div>
+                    <div class="text-xs">
+                        <p class="font-semibold text-gray-800">Administrador</p>
+                        <p class="text-gray-400">Administrador</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto p-8 space-y-6">
+
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">IA & Automação de Conversas</h1>
+                    <p class="text-sm text-gray-500 mt-1">Configure respostas inteligentes, gatilhos automatizados e
+                        agentes de IA para qualificar os seus leads</p>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="flex items-center gap-2 border border-gray-200 bg-white px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        <i data-lucide="code" class="w-4 h-4"></i> Webhooks & API
+                    </button>
+                    <button
+                        class="flex items-center gap-2 bg-indigo-600 px-4 py-2 rounded-lg text-sm font-medium text-white hover:bg-indigo-700">
+                        <i data-lucide="plus" class="w-4 h-4"></i> Novo Fluxo Inteligente
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center gap-4">
+                    <div class="p-3 rounded-xl bg-purple-50 text-purple-600"><i data-lucide="message-square"
+                            class="w-6 h-6"></i></div>
+                    <div>
+                        <p class="text-xs text-gray-400 font-medium">Interações por IA</p>
+                        <p class="text-2xl font-bold text-gray-900 mt-0.5">14.820</p>
+                        <p class="text-[10px] text-green-500 font-medium mt-0.5">Este mês</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center gap-4">
+                    <div class="p-3 rounded-xl bg-indigo-50 text-indigo-600"><i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400 font-medium">Leads Qualificados por IA</p>
+                        <p class="text-2xl font-bold text-gray-900 mt-0.5">1.840</p>
+                        <p class="text-[10px] text-indigo-600 font-medium mt-0.5">74% de assertividade</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center gap-4">
+                    <div class="p-3 rounded-xl bg-green-50 text-green-600"><i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400 font-medium">Tempo Economizado</p>
+                        <p class="text-2xl font-bold text-gray-900 mt-0.5">124h</p>
+                        <p class="text-[10px] text-gray-400 mt-0.5">de atendimento humano</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center gap-4">
+                    <div class="p-3 rounded-xl bg-orange-50 text-orange-500"><i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-400 font-medium">Automações Ativas</p>
+                        <p class="text-2xl font-bold text-gray-900 mt-0.5">7 / 10</p>
+                        <p class="text-[10px] text-orange-600 font-medium mt-0.5 cursor-pointer hover:underline">Ver
+                            limites do plano</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl border border-gray-200 col-span-2 flex flex-col">
+                    <div class="p-4 border-b border-gray-200 flex items-center justify-between">
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-sm">Gatilhos e Fluxos de Resposta Ativos</h3>
+                            <p class="text-xs text-gray-400">Mensagens enviadas com base no comportamento do lead</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 space-y-4">
+                        <div
+                            class="p-4 border border-gray-100 rounded-xl bg-gray-50/50 flex items-start justify-between gap-4">
+                            <div class="flex items-start gap-3">
+                                <div class="p-2.5 bg-green-50 text-green-600 rounded-lg mt-0.5"><i
+                                        data-lucide="message-circle" class="w-5 h-5"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 text-sm">Primeiro contato (Boas-vindas
+                                        WhatsApp)</h4>
+                                    <p class="text-xs text-gray-400 mt-0.5">Quando um novo lead mandar mensagem, a IA
+                                        responde em até 10 segundos qualificando o interesse.</p>
+                                    <div class="flex items-center gap-3 mt-2 text-[11px] text-gray-500 font-medium">
+                                        <span class="bg-white px-2 py-0.5 rounded border border-gray-200">Gatilho:
+                                            Entrada</span>
+                                        <span class="flex items-center gap-1"><i data-lucide="check"
+                                                class="w-3 h-3 text-green-500"></i> 4.120 disparos</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="w-10 h-6 bg-indigo-600 rounded-full p-0.5 flex justify-end items-center cursor-pointer">
+                                <div class="w-5 h-5 bg-white rounded-full shadow-sm"></div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-4 border border-gray-100 rounded-xl bg-gray-50/50 flex items-start justify-between gap-4">
+                            <div class="flex items-start gap-3">
+                                <div class="p-2.5 bg-purple-50 text-purple-600 rounded-lg mt-0.5"><i
+                                        data-lucide="alert-circle" class="w-5 h-5"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 text-sm">Recuperação de Carrinho Abandonado
+                                        (Checkout)</h4>
+                                    <p class="text-xs text-gray-400 mt-0.5">Se o cliente gerar o link de pagamento mas
+                                        não concluir em 15 minutos, envia uma oferta especial.</p>
+                                    <div class="flex items-center gap-3 mt-2 text-[11px] text-gray-500 font-medium">
+                                        <span class="bg-white px-2 py-0.5 rounded border border-gray-200">Gatilho:
+                                            Tempo</span>
+                                        <span class="flex items-center gap-1"><i data-lucide="check"
+                                                class="w-3 h-3 text-green-500"></i> 842 disparos (18% conv.)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="w-10 h-6 bg-indigo-600 rounded-full p-0.5 flex justify-end items-center cursor-pointer">
+                                <div class="w-5 h-5 bg-white rounded-full shadow-sm"></div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-4 border border-gray-100 rounded-xl bg-gray-50/50 flex items-start justify-between gap-4">
+                            <div class="flex items-start gap-3">
+                                <div class="p-2.5 bg-orange-50 text-orange-500 rounded-lg mt-0.5"><i
+                                        data-lucide="user-plus" class="w-5 h-5"></i></div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 text-sm">Distribuição inteligente de Leads
+                                        para Vendedores</h4>
+                                    <p class="text-xs text-gray-400 mt-0.5">Após a IA identificar que o lead está
+                                        "Quente", distribui por formato de rodízio entre os atendentes online.</p>
+                                    <div class="flex items-center gap-3 mt-2 text-[11px] text-gray-500 font-medium">
+                                        <span class="bg-white px-2 py-0.5 rounded border border-gray-200">Gatilho:
+                                            Interno</span>
+                                        <span
+                                            class="flex items-center gap-1 text-indigo-600 font-semibold cursor-pointer hover:underline">Configurar
+                                            regras de rodízio</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="w-10 h-6 bg-indigo-600 rounded-full p-0.5 flex justify-end items-center cursor-pointer">
+                                <div class="w-5 h-5 bg-white rounded-full shadow-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-gray-200 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-2 border-b border-gray-100 pb-4">
+                            <div class="p-2 bg-indigo-50 text-indigo-600 rounded-lg"><i data-lucide="brain"
+                                    class="w-4 h-4"></i></div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-sm">Personalidade da IA</h3>
+                                <p class="text-xs text-gray-400">Instruções gerais do robô de atendimento</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-[11px] text-gray-400 uppercase font-semibold tracking-wider">Tom de
+                                Voz</label>
+                            <select
+                                class="w-full border border-gray-200 rounded-lg bg-white px-3 py-2 text-xs text-gray-700 focus:outline-none focus:border-indigo-500">
+                                <option>Consultivo, prestativo e focado em vendas</option>
+                                <option>Descontraído e informal</option>
+                                <option>Corporativo e formal</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-[11px] text-gray-400 uppercase font-semibold tracking-wider">Objetivo
+                                Principal do Robô</label>
+                            <textarea rows="4"
+                                class="w-full border border-gray-200 rounded-lg bg-gray-50 p-3 text-xs text-gray-700 focus:outline-none focus:bg-white focus:border-indigo-500 leading-relaxed"
+                                placeholder="Ex: Saudar o cliente, identificar qual produto ele deseja comprar e recolher o número de telefone para passar ao time comercial.">O seu objetivo é saudar o cliente com simpatia, identificar qual o produto de interesse do catálogo e, assim que o lead demonstrar intenção real de compra, enviar o link de checkout adequado ou encaminhar para um atendente humano.</textarea>
+                        </div>
+
+                        <div
+                            class="flex items-center justify-between text-xs bg-indigo-50/50 p-3 rounded-lg border border-indigo-100">
+                            <span class="text-indigo-900 font-medium">Habilitar respostas com áudio por IA</span>
+                            <div
+                                class="w-10 h-6 bg-gray-200 rounded-full p-0.5 flex justify-start items-center cursor-pointer">
+                                <div class="w-5 h-5 bg-white rounded-full shadow-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold py-2.5 rounded-lg transition mt-4">
+                        Salvar Configuração Cognitiva
+                    </button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadStock - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#635bff',
+                            dark: '#4f46e5',
+                        },
+                        ink: '#0d0e25',
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="min-h-screen flex flex-col bg-[#f8f9fa] text-[#333333] font-sans">
+
+    <main class="flex flex-1 flex-col md:flex-row">
+        <!-- Lado Esquerdo: Informações -->
+        <section
+            class="w-full md:w-[45%] bg-ink text-white flex flex-col justify-between gap-10 p-8 md:p-12 relative overflow-hidden">
+            <div>
+                <!-- Logo -->
+                <div class="flex items-center gap-2 text-2xl font-bold">
+                    <span
+                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/20 border border-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M3 3v18h18" />
+                            <path d="M18 9l-5 5-4-4-4 4" />
+                        </svg>
+                    </span>
+                    <span>LeadStock</span>
+                </div>
+
+                <h1 class="mt-8 mb-4 text-3xl md:text-4xl font-bold leading-tight">
+                    Gerencie leads. Venda mais. Organize <span class="text-primary">tudo.</span>
+                </h1>
+
+                <p class="max-w-[90%] text-[#a3a3c2] leading-relaxed mb-10">
+                    CRM completo com gestão de estoque, chat omnichannel e inteligência artificial para transformar
+                    conversas em resultados.
+                </p>
+
+                <ul class="flex flex-col gap-6 mb-10">
+                    <li class="relative pl-12">
+                        <span
+                            class="absolute left-0 top-0.5 h-6 w-6 rounded-md bg-primary/20 border border-primary"></span>
+                        <strong class="block text-white mb-1">Chat Omnichannel</strong>
+                        <p class="text-sm text-[#a3a3c2]">WhatsApp, Instagram, E-mail e muito mais em um só lugar.</p>
+                    </li>
+                    <li class="relative pl-12">
+                        <span
+                            class="absolute left-0 top-0.5 h-6 w-6 rounded-md bg-primary/20 border border-primary"></span>
+                        <strong class="block text-white mb-1">IA que trabalha por você</strong>
+                        <p class="text-sm text-[#a3a3c2]">Responda automaticamente fora do horário comercial e nunca
+                            perca oportunidades.</p>
+                    </li>
+                    <li class="relative pl-12">
+                        <span
+                            class="absolute left-0 top-0.5 h-6 w-6 rounded-md bg-primary/20 border border-primary"></span>
+                        <strong class="block text-white mb-1">Estoque inteligente</strong>
+                        <p class="text-sm text-[#a3a3c2]">Controle seu estoque, receba alertas e evite perdas.</p>
+                    </li>
+                    <li class="relative pl-12">
+                        <span
+                            class="absolute left-0 top-0.5 h-6 w-6 rounded-md bg-primary/20 border border-primary"></span>
+                        <strong class="block text-white mb-1">Relatórios e métricas</strong>
+                        <p class="text-sm text-[#a3a3c2]">Acompanhe resultados e tome decisões com dados reais.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pré-visualização do sistema ao fundo -->
+            <div
+                class="hidden md:block self-center w-[90%] max-h-[250px] rounded-lg border border-white/10 bg-white/5 opacity-40 p-4">
+                <div class="h-3 w-24 rounded bg-white/30 mb-4"></div>
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="h-16 rounded bg-white/20"></div>
+                    <div class="h-16 rounded bg-white/20"></div>
+                    <div class="h-16 rounded bg-white/20"></div>
+                </div>
+                <div class="mt-3 h-20 rounded bg-white/20"></div>
+            </div>
+        </section>
+
+        <!-- Lado Direito: Formulário de Login -->
+        <section class="w-full md:w-[55%] flex flex-col items-center justify-center bg-[#fcfcfd] p-6 md:p-12">
+            <div class="w-full max-w-[520px] bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.04)] p-8 md:p-14">
+                <h2 class="text-center text-2xl md:text-3xl text-[#1a1a1a] mb-2">Bem-vindo de volta!</h2>
+                <p class="text-center text-[#666666] text-sm mb-10">Faça login para acessar sua conta</p>
+
+                <form action="#" method="POST" class="flex flex-col gap-5">
+                    <div class="flex flex-col gap-2">
+                        <label for="email" class="text-sm font-semibold text-[#333333]">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required
+                            class="w-full rounded-lg border border-[#e2e8f0] px-4 py-3 text-[15px] text-[#333333] outline-none transition-colors focus:border-primary">
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <label for="password" class="text-sm font-semibold text-[#333333]">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="********" required
+                            class="w-full rounded-lg border border-[#e2e8f0] px-4 py-3 text-[15px] text-[#333333] outline-none transition-colors focus:border-primary">
+                    </div>
+
+                    <div class="flex flex-row items-center justify-between text-sm mt-1">
+                        <label class="flex items-center gap-2 cursor-pointer text-[#666666] font-normal">
+                            <input type="checkbox" name="remember" class="accent-primary">
+                            Lembrar de mim
+                        </label>
+                        <a href="#" class="text-primary font-medium hover:underline">Esqueci minha senha</a>
+                    </div>
+
+                    <button type="submit"
+                        class="mt-2 w-full rounded-lg bg-primary py-3.5 text-base font-semibold text-white transition-colors hover:bg-primary-dark cursor-pointer">
+                        Entrar
+                    </button>
+                </form>
+
+                <div class="flex items-center text-center text-[#999999] text-[0.85rem] my-6">
+                    <span class="flex-1 border-b border-[#e2e8f0]"></span>
+                    <span class="mx-2">ou entre com</span>
+                    <span class="flex-1 border-b border-[#e2e8f0]"></span>
+                </div>
+
+                <!-- Botões de Login Social -->
+                <div class="flex flex-col gap-3 mb-8">
+                    <button type="button"
+                        class="w-full flex items-center justify-center gap-3 rounded-lg border border-[#e2e8f0] bg-white py-3 text-[15px] font-medium text-[#333333] transition-colors hover:bg-[#f8f9fa] cursor-pointer">
+                        <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24">
+                            <path fill="#4285F4"
+                                d="M23.49 12.27c0-.79-.07-1.54-.2-2.27H12v4.51h6.47c-.28 1.48-1.13 2.73-2.4 3.58v2.98h3.88c2.27-2.09 3.54-5.17 3.54-8.8z" />
+                            <path fill="#34A853"
+                                d="M12 24c3.24 0 5.95-1.08 7.93-2.92l-3.88-2.98c-1.08.72-2.45 1.15-4.05 1.15-3.11 0-5.75-2.1-6.69-4.92H1.3v3.09C3.26 21.3 7.31 24 12 24z" />
+                            <path fill="#FBBC05"
+                                d="M5.31 14.33c-.24-.72-.38-1.49-.38-2.28s.14-1.56.38-2.28V6.68H1.3A11.95 11.95 0 0 0 0 12.05c0 1.93.46 3.76 1.3 5.37l4.01-3.09z" />
+                            <path fill="#EA4335"
+                                d="M12 4.75c1.76 0 3.34.6 4.58 1.79l3.44-3.44C17.94 1.2 15.24 0 12 0 7.31 0 3.26 2.7 1.3 6.68l4.01 3.09c.94-2.82 3.58-4.92 6.69-4.92z" />
+                        </svg>
+                        Entrar com Google
+                    </button>
+                    <button type="button"
+                        class="w-full flex items-center justify-center gap-3 rounded-lg border border-[#e2e8f0] bg-white py-3 text-[15px] font-medium text-[#333333] transition-colors hover:bg-[#f8f9fa] cursor-pointer">
+                        <svg class="h-[18px] w-[18px]" viewBox="0 0 23 23">
+                            <path fill="#F35325" d="M1 1h10v10H1z" />
+                            <path fill="#81BC06" d="M12 1h10v10H12z" />
+                            <path fill="#05A6F0" d="M1 12h10v10H1z" />
+                            <path fill="#FFBA08" d="M12 12h10v10H12z" />
+                        </svg>
+                        Entrar com Microsoft
+                    </button>
+                </div>
+
+                <div>
+                    <p class="text-center text-sm text-[#666666]">
+                        Ainda não tem uma conta?
+                        <a href="#" class="font-semibold text-primary hover:underline">Fale com nosso time</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-[#f1f1f4] bg-[#fcfcfd] p-6 text-center text-[0.85rem] text-[#999999]">
+        <p>&copy; 2025 LeadStock. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
