@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LeadStock - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -26,162 +27,106 @@
     </script>
 </head>
 
-<body class="flex bg-white text-[#202124] font-sans">
+<body class="flex h-screen overflow-hidden bg-white text-[#202124] font-sans">
 
     <!-- BARRA LATERAL (SIDEBAR) -->
-    <aside
-        class="hidden lg:flex w-[260px] h-screen bg-sidebar text-white flex-col fixed left-0 top-0 border-r border-white/[.08]">
-        <div class="flex items-center gap-2 px-6 py-6 text-xl font-bold">
-            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/20 border border-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 3v18h18" />
-                    <path d="M18 9l-5 5-4-4-4 4" />
-                </svg>
-            </span>
-            <span>LeadStock</span>
+    <aside class="w-64 bg-[#0B0E2A] text-gray-400 flex flex-col justify-between h-full flex-shrink-0">
+        <div>
+            <!-- Logo -->
+            <div class="p-6 flex items-center gap-2 text-white font-bold text-xl border-b border-gray-800">
+                <div class="bg-indigo-600 p-2 rounded-lg text-white">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <span>LeadStock</span>
+            </div>
+
+            <!-- Menu de Navegação -->
+            <nav class="p-4 space-y-1 text-sm font-medium">
+                <a href="dashboard.html" class="flex items-center gap-3 px-3 py-2.5 bg-indigo-600 text-white rounded-lg transition">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard
+                </a>
+                <a href="leads.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="users" class="w-4 h-4"></i> Leads
+                </a>
+                <a href="pipeline.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="git-branch" class="w-4 h-4"></i> Pipeline
+                </a>
+                <a href="inbox.html"
+                    class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Inbox
+                    </div>
+                    <span class="bg-indigo-600 text-white text-xs px-2 py-0.5 rounded-full">12</span>
+                </a>
+                <a href="estoque.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="package" class="w-4 h-4"></i> Estoque
+                </a>
+                <a href="produtos.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i> Produtos
+                </a>
+                <a href="relatorios.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Relatórios
+                </a>
+                <a href="automacao.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="cpu" class="w-4 h-4"></i> IA / Automação
+                </a>
+                <a href="configuracoes.html"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-800 hover:text-white transition">
+                    <i data-lucide="settings" class="w-4 h-4"></i> Configurações
+                </a>
+                <!-- GRUPO EXPANSÍVEL: Usuários > Clientes / Agentes -->
+                <div>
+                    <button type="button" onclick="toggleUsuarios()"
+                        class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-white hover:bg-gray-800 transition">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="users-2" class="w-4 h-4"></i> Usuários
+                        </div>
+                        <i data-lucide="chevron-down" id="chevron-usuarios"
+                            class="w-4 h-4 text-gray-400 transition-transform duration-200"></i>
+                    </button>
+
+                    <!-- Subitens -->
+                    <div id="submenu-usuarios" class="mt-1 ml-4 pl-3 border-l border-gray-800 space-y-1">
+                        <a href="clientes.html"
+                            class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:bg-gray-800 hover:text-white transition">
+                            <i data-lucide="user-check" class="w-4 h-4"></i> Clientes
+                        </a>
+                        <a href="agentes.html"
+                            class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:bg-gray-800 hover:text-white transition">
+                            <i data-lucide="user-cog" class="w-4 h-4"></i> Agentes
+                        </a>
+                    </div>
+                </div>
+            </nav>
         </div>
 
-        <!-- Menu de Navegação -->
-        <nav class="mt-2 flex-1 overflow-y-auto px-3 space-y-1">
-            <a href="#"
-                class="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-gradient-to-r from-primary to-primary-dark text-white">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="7" height="9" rx="1.5" />
-                    <rect x="14" y="3" width="7" height="5" rx="1.5" />
-                    <rect x="14" y="12" width="7" height="9" rx="1.5" />
-                    <rect x="3" y="16" width="7" height="5" rx="1.5" />
-                </svg>
-                Dashboard
-            </a>
-            <a href="#"
-                class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-[#d2d6e3] hover:bg-[#1b2644] transition-colors duration-200">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-                Leads
-            </a>
-            <a href="#"
-                class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-[#d2d6e3] hover:bg-[#1b2644] transition-colors duration-200">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-                </svg>
-                Pipeline
-            </a>
-            <a href="#"
-                class="relative flex items-center gap-3.5 px-4 py-3 rounded-xl text-[#d2d6e3] hover:bg-[#1b2644] transition-colors duration-200">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                </svg>
-                Inbox
-                <span
-                    class="ml-auto flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1.5 text-xs font-semibold">12</span>
-            </a>
-            <a href="#"
-                class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-[#d2d6e3] hover:bg-[#1b2644] transition-colors duration-200">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                        d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                    <line x1="12" y1="22.08" x2="12" y2="12" />
-                </svg>
-                Estoque
-            </a>
-            <a href="#"
-                class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-[#d2d6e3] hover:bg-[#1b2644] transition-colors duration-200">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                        d="M20.59 13.41 11 3.83A2 2 0 0 0 9.59 3.24L3 3v6.59a2 2 0 0 0 .59 1.41l9.58 9.59a2 2 0 0 0 2.82 0l4.6-4.6a2 2 0 0 0 0-2.58Z" />
-                    <circle cx="7.5" cy="7.5" r="1.5" />
-                </svg>
-                Produtos
-            </a>
-            <a href="#"
-                class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-[#d2d6e3] hover:bg-[#1b2644] transition-colors duration-200">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-                Clientes
-            </a>
-            <a href="#"
-                class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-[#d2d6e3] hover:bg-[#1b2644] transition-colors duration-200">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="20" x2="18" y2="10" />
-                    <line x1="12" y1="20" x2="12" y2="4" />
-                    <line x1="6" y1="20" x2="6" y2="14" />
-                </svg>
-                Relatórios
-            </a>
-            <a href="#"
-                class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-[#d2d6e3] hover:bg-[#1b2644] transition-colors duration-200">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                        d="M12 2a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v1h1a2 2 0 0 1 0 4h-1v2h1a2 2 0 0 1 0 4h-1v1a2 2 0 0 1-2 2h-1v1a2 2 0 0 1-4 0v-1H9a2 2 0 0 1-2-2v-1H6a2 2 0 0 1 0-4h1v-2H6a2 2 0 0 1 0-4h1V7a2 2 0 0 1 2-2h1V4a2 2 0 0 1 2-2Z" />
-                    <rect x="9" y="9" width="6" height="6" rx="1" />
-                </svg>
-                IA / Automação
-            </a>
-            <a href="#"
-                class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-[#d2d6e3] hover:bg-[#1b2644] transition-colors duration-200">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3" />
-                    <path
-                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-                </svg>
-                Configurações
-            </a>
-            <a href="#"
-                class="flex items-center gap-3.5 px-4 py-3 rounded-xl text-[#d2d6e3] hover:bg-[#1b2644] transition-colors duration-200">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                </svg>
-                Usuários
-            </a>
-        </nav>
-
-        <!-- Perfil do Usuário na Sidebar -->
-        <div class="flex items-center gap-3 p-4 mt-auto border-t border-white/10">
-            <div
-                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold">
-                AD</div>
-            <div class="min-w-0 flex-1">
-                <strong class="block truncate text-sm font-semibold">Administrador</strong>
-                <span class="block truncate text-xs text-[#8a90a6]">admin@leadstock.com</span>
+        <!-- Perfil na Sidebar -->
+        <div class="p-4 border-t border-gray-800 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-9 h-9 rounded-full bg-indigo-500 flex items-center justify-center text-white font-semibold text-sm">
+                    AD
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-white leading-tight">Administrador</p>
+                    <p class="text-xs text-gray-500">admin@leadstock.com</p>
+                </div>
             </div>
-            <button type="button" aria-label="Menu do usuário" class="text-[#8a90a6] hover:text-white">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="1" />
-                    <circle cx="12" cy="5" r="1" />
-                    <circle cx="12" cy="19" r="1" />
-                </svg>
-            </button>
+            <i data-lucide="chevron-up" class="w-4 h-4 text-gray-500"></i>
         </div>
     </aside>
 
     <!-- CONTEÚDO PRINCIPAL (MAIN CONTENT) -->
-    <div class="w-full lg:ml-[260px] lg:w-[calc(100%-260px)] min-h-screen bg-white">
+    <div class="flex-1 flex flex-col h-full overflow-hidden bg-white">
 
         <!-- CABEÇALHO SUPERIOR (TOPBAR) -->
-        <header class="flex h-[72px] items-center justify-between border-b border-[#ececec] px-5 md:px-8">
+        <header class="flex h-[72px] flex-shrink-0 items-center justify-between border-b border-[#ececec] px-5 md:px-8">
             <div class="flex items-center gap-4">
                 <button type="button" aria-label="Menu Hamburguer" class="lg:hidden text-[#4b5563]">
                     <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -239,7 +184,7 @@
         </header>
 
         <!-- ÁREA DOS CARDS E GRÁFICOS -->
-        <main class="p-5 md:p-9">
+        <main class="flex-1 overflow-y-auto p-5 md:p-9">
 
             <!-- Linha de Boas-vindas e Filtro de Data -->
             <section class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8">
@@ -648,6 +593,17 @@
         class="fixed right-9 bottom-9 flex h-[62px] w-[62px] items-center justify-center rounded-full bg-primary text-3xl text-white shadow-[0_12px_30px_rgba(99,91,255,.35)] hover:bg-primary-dark transition-colors"
         aria-label="Adicionar novo item">+</button>
 
+    <script>
+        lucide.createIcons();
+
+        // Abre/fecha o submenu de Usuários (Clientes / Agentes)
+        function toggleUsuarios() {
+            const submenu = document.getElementById('submenu-usuarios');
+            const chevron = document.getElementById('chevron-usuarios');
+            submenu.classList.toggle('hidden');
+            chevron.classList.toggle('-rotate-90'); // seta aponta para o lado quando fechado
+        }
+    </script>
 </body>
 
 </html>
