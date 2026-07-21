@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadStock - Visão Geral da Plataforma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gray-50 text-gray-800 flex min-h-screen text-xs antialiased selection:bg-indigo-500 selection:text-white">
+
+    <aside class="w-64 bg-[#0d0e2c] text-gray-400 flex flex-col justify-between shrink-0">
+        <div class="overflow-y-auto max-h-[calc(100vh-60px)] p-4 space-y-6">
+            <div>
+                <div class="flex items-center gap-2 mb-1">
+                    <div
+                        class="bg-indigo-600 text-white p-2 rounded-lg font-bold text-lg flex items-center justify-center w-9 h-9">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <div>
+                        <span class="text-white font-bold text-base tracking-wide block">LeadStock</span>
+                    </div>
+                </div>
+                <span
+                    class="inline-block bg-indigo-600 text-white text-[10px] px-2 py-0.5 rounded font-medium mt-1">Super
+                    User</span>
+            </div>
+
+            <nav class="space-y-4">
+                <div>
+                    <span class="text-[10px] font-bold text-gray-500 uppercase tracking-wider block mb-2">Visão
+                        Geral</span>
+                    <a href="#"
+                        class="flex items-center gap-3 bg-indigo-700 text-white px-3 py-2 rounded-lg font-medium transition">
+                        <i class="fa-solid fa-house text-sm w-4"></i> Visão Geral
+                    </a>
+                </div>
+
+                <div>
+                    <span
+                        class="text-[10px] font-bold text-gray-500 uppercase tracking-wider block mb-2">Empresas</span>
+                    <div class="space-y-1">
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-building text-sm w-4"></i> Todas as Empresas</a>
+                        <a href="#"
+                            class="flex items-center justify-between px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition">
+                            <span class="flex items-center gap-3"><i class="fa-solid fa-user-plus text-sm w-4"></i>
+                                Solicitações de Cadastro</span>
+                            <span
+                                class="bg-indigo-600 text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">3</span>
+                        </a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-cubes text-sm w-4"></i> Planos</a>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-[10px] font-bold text-gray-500 uppercase tracking-wider block mb-2">Assinaturas e
+                        Financeiro</span>
+                    <div class="space-y-1">
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-tags text-sm w-4"></i> Planos</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-file-signature text-sm w-4"></i> Assinaturas</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-receipt text-sm w-4"></i> Cobranças</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-file-invoice-dollar text-sm w-4"></i> Faturas</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-wallet text-sm w-4"></i> Receita</a>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-[10px] font-bold text-gray-500 uppercase tracking-wider block mb-2">IA e
+                        Automação</span>
+                    <div class="space-y-1">
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-robot text-sm w-4"></i> Uso da IA</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-message text-sm w-4"></i> Modelos e Prompts</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-chart-pie text-sm w-4"></i> Consumo e Custos</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-terminal text-sm w-4"></i> Logs de IA</a>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-[10px] font-bold text-gray-500 uppercase tracking-wider block mb-2">Canais e
+                        Integrações</span>
+                    <div class="space-y-1">
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-circle-nodes text-sm w-4"></i> Canais</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-plug text-sm w-4"></i> Integrações</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-code text-sm w-4"></i> Webhooks</a>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-[10px] font-bold text-gray-500 uppercase tracking-wider block mb-2">Sistema</span>
+                    <div class="space-y-1">
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-gauge text-sm w-4"></i> Monitoramento</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-list-check text-sm w-4"></i> Logs do Sistema</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-server text-sm w-4"></i> Filas e Workers</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                                class="fa-solid fa-shield-halved text-sm w-4"></i> Auditoria</a>
+                    </div>
+                </div>
+
+                <div>
+                    <span
+                        class="text-[10px] font-bold text-gray-500 uppercase tracking-wider block mb-2">Configurações</span>
+                    <a href="#"
+                        class="flex items-center gap-3 px-3 py-1.5 rounded-lg hover:bg-gray-800 hover:text-gray-200 transition"><i
+                            class="fa-solid fa-gear text-sm w-4"></i> Configurações Gerais</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="p-4 border-t border-gray-800 flex items-center justify-between bg-[#0b0c24]">
+            <div class="flex items-center gap-3">
+                <div
+                    class="bg-indigo-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center text-xs">
+                    SU</div>
+                <div>
+                    <span class="text-white font-semibold block leading-tight text-xs">Super User</span>
+                    <span class="text-[10px] text-gray-500 block">super@leadstock.com</span>
+                </div>
+            </div>
+            <button class="text-gray-500 hover:text-white transition"><i
+                    class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col min-w-0">
+
+        <header class="bg-white border-b border-gray-200 h-14 flex items-center justify-between px-6 shrink-0">
+            <div class="flex items-center gap-3 w-96 relative">
+                <i class="fa-solid fa-bars text-gray-400 cursor-pointer text-sm"></i>
+                <div class="relative w-full">
+                    <i class="fa-solid fa-magnifying-glass text-gray-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+                    <input type="text" placeholder="Buscar empresas, assinaturas, usuários..."
+                        class="w-full bg-gray-50 border border-gray-200 rounded-lg pl-9 pr-14 py-1.5 focus:outline-none focus:border-indigo-500 text-xs">
+                    <span
+                        class="absolute right-3 top-1/2 -translate-y-1/2 bg-white border border-gray-200 px-1 py-0.5 rounded text-[10px] text-gray-400 font-mono">Ctrl
+                        + K</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="relative cursor-pointer">
+                    <i class="fa-regular fa-bell text-gray-600 text-base"></i>
+                    <span
+                        class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center">12</span>
+                </div>
+                <i class="fa-regular fa-circle-question text-gray-600 text-base cursor-pointer"></i>
+                <div class="flex items-center gap-2 border-l pl-4 border-gray-200">
+                    <div
+                        class="bg-indigo-600 text-white font-bold rounded-full w-7 h-7 flex items-center justify-center text-[11px]">
+                        SU</div>
+                    <div class="leading-none">
+                        <span class="text-gray-700 font-semibold block text-[11px]">Super User</span>
+                        <span class="text-[9px] text-gray-400 block">Super Administrador</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto p-6 space-y-6 max-w-[1600px] w-full mx-auto">
+
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-lg font-bold text-gray-900">Visão Geral da Plataforma</h1>
+                    <p class="text-gray-400 text-[11px]">Acompanhe o desempenho geral do LeadStock SaaS</p>
+                </div>
+                <div
+                    class="bg-white border border-gray-200 px-3 py-1.5 rounded-lg flex items-center gap-2 text-gray-600 cursor-pointer hover:bg-gray-50 font-medium">
+                    <i class="fa-regular fa-calendar text-gray-400"></i>
+                    <span>01/06/2026 - 30/06/2026</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 text-[10px] ml-1"></i>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-5 gap-4">
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-[10px] font-medium text-gray-400 block mb-1">Empresas Ativas</span>
+                            <span class="text-xl font-bold text-gray-900 block">42</span>
+                        </div>
+                        <div class="bg-indigo-50 text-indigo-600 p-2 rounded-lg"><i
+                                class="fa-solid fa-building text-sm"></i></div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between border-t border-gray-50 pt-2 text-[10px]">
+                        <span class="text-emerald-500 font-medium"><i class="fa-solid fa-plus mr-0.5"></i>4 este
+                            mês</span>
+                        <a href="#" class="text-indigo-600 font-medium hover:underline">Ver empresas <i
+                                class="fa-solid fa-angle-right text-[8px] ml-0.5"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-[10px] font-medium text-gray-400 block mb-1">Usuários Totais</span>
+                            <span class="text-xl font-bold text-gray-900 block">1.256</span>
+                        </div>
+                        <div class="bg-emerald-50 text-emerald-600 p-2 rounded-lg"><i
+                                class="fa-solid fa-users text-sm"></i></div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between border-t border-gray-50 pt-2 text-[10px]">
+                        <span class="text-emerald-500 font-medium"><i class="fa-solid fa-plus mr-0.5"></i>8,5% este
+                            mês</span>
+                        <a href="#" class="text-indigo-600 font-medium hover:underline">Ver usuários <i
+                                class="fa-solid fa-angle-right text-[8px] ml-0.5"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-[10px] font-medium text-gray-400 block mb-1">Conversas (IA)</span>
+                            <span class="text-xl font-bold text-gray-900 block">18.742</span>
+                        </div>
+                        <div class="bg-blue-50 text-blue-600 p-2 rounded-lg"><i class="fa-solid fa-message text-sm"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between border-t border-gray-50 pt-2 text-[10px]">
+                        <span class="text-emerald-500 font-medium"><i class="fa-solid fa-plus mr-0.5"></i>12,3% este
+                            mês</span>
+                        <a href="#" class="text-indigo-600 font-medium hover:underline">Ver conversas <i
+                                class="fa-solid fa-angle-right text-[8px] ml-0.5"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-[10px] font-medium text-gray-400 block mb-1">Receita Recorrente
+                                (MRR)</span>
+                            <span class="text-lg font-bold text-gray-900 block">R$ 78.450,00</span>
+                        </div>
+                        <div class="bg-amber-50 text-amber-600 p-2 rounded-lg"><i
+                                class="fa-solid fa-dollar-sign text-sm w-4 text-center"></i></div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between border-t border-gray-50 pt-2 text-[10px]">
+                        <span class="text-emerald-500 font-medium"><i class="fa-solid fa-plus mr-0.5"></i>9,7% este
+                            mês</span>
+                        <a href="#" class="text-indigo-600 font-medium hover:underline">Ver financeiro <i
+                                class="fa-solid fa-angle-right text-[8px] ml-0.5"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-[10px] font-medium text-gray-400 block mb-1">Armazenamento Usado</span>
+                            <span class="text-xl font-bold text-gray-900 block">1,42 TB</span>
+                        </div>
+                        <div class="bg-rose-50 text-rose-600 p-2 rounded-lg"><i
+                                class="fa-solid fa-database text-sm"></i></div>
+                    </div>
+                    <div class="mt-4 border-t border-gray-50 pt-2">
+                        <div class="flex justify-between text-[10px] mb-1">
+                            <span class="text-gray-400">de 10 TB (14%)</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-1.5">
+                            <div class="bg-indigo-600 h-1.5 rounded-full" style="width: 14%"></div>
+                        </div>
+                        <div class="flex justify-end text-[10px] mt-1">
+                            <a href="#" class="text-indigo-600 font-medium hover:underline">Ver armazenamento <i
+                                    class="fa-solid fa-angle-right text-[8px] ml-0.5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-4">
+                <div
+                    class="col-span-6 bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="font-bold text-gray-900 text-sm">Receita Recorrente (MRR)</span>
+                        <div
+                            class="border rounded px-2 py-1 text-gray-500 bg-gray-50 flex items-center gap-1 cursor-pointer">
+                            <span>Últimos 30 dias</span> <i class="fa-solid fa-chevron-down text-[8px]"></i>
+                        </div>
+                    </div>
+
+                    <div class="h-32 w-full relative my-2">
+                        <svg class="w-full h-full" viewBox="0 0 500 100" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#6366f1" stop-opacity="0.2" />
+                                    <stop offset="100%" stop-color="#6366f1" stop-opacity="0.0" />
+                                </linearGradient>
+                            </defs>
+                            <path
+                                d="M 0 60 Q 40 40, 80 50 T 160 45 T 240 35 T 320 40 T 400 30 T 480 20 L 500 15 L 500 100 L 0 100 Z"
+                                fill="url(#chartGrad)" />
+                            <path d="M 0 60 Q 40 40, 80 50 T 160 45 T 240 35 T 320 40 T 400 30 T 480 20 L 500 15"
+                                fill="none" stroke="#6366f1" stroke-width="2" />
+                        </svg>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 flex justify-between text-[9px] text-gray-400 px-1">
+                            <span>01 Jun</span><span>06 Jun</span><span>11 Jun</span><span>16 Jun</span><span>21
+                                Jun</span><span>26 Jun</span><span>30 Jun</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-2 border-t pt-3 text-[10px] mt-2">
+                        <div>
+                            <span class="text-gray-400 block">MRR Atual</span>
+                            <span class="font-bold text-gray-800 text-xs">R$ 78.450,00</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block">MRR Anterior</span>
+                            <span class="font-bold text-gray-800 text-xs">R$ 71.430,00</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block">Variação</span>
+                            <span class="text-emerald-500 font-bold text-xs"><i
+                                    class="fa-solid fa-arrow-up mr-0.5"></i>+9,7%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="col-span-3 bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <span class="font-bold text-gray-900 text-sm mb-2 block">Empresas por Plano</span>
+                    <div class="flex items-center justify-between gap-2 my-auto">
+                        <div class="relative w-24 h-24 shrink-0 flex items-center justify-center">
+                            <div
+                                class="w-full h-full rounded-full border-[10px] border-indigo-600 border-t-emerald-400 border-r-amber-400 border-b-blue-400 rotate-45">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-full m-2.5">
+                                <span class="text-base font-bold text-gray-900 leading-none">42</span>
+                                <span class="text-[9px] text-gray-400">Total</span>
+                            </div>
+                        </div>
+                        <div class="space-y-1 text-[10px] flex-1">
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center gap-1.5 text-gray-500"><span
+                                        class="w-2 h-2 rounded-full bg-indigo-600 inline-block"></span>Enterprise</span>
+                                <span class="font-medium text-gray-800">12 (28,6%)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center gap-1.5 text-gray-500"><span
+                                        class="w-2 h-2 rounded-full bg-blue-400 inline-block"></span>Professional</span>
+                                <span class="font-medium text-gray-800">18 (42,9%)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center gap-1.5 text-gray-500"><span
+                                        class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>Basic</span>
+                                <span class="font-medium text-gray-800">8 (19,0%)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center gap-1.5 text-gray-500"><span
+                                        class="w-2 h-2 rounded-full bg-amber-400 inline-block"></span>Trial</span>
+                                <span class="font-medium text-gray-800">4 (9,5%)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center border-t pt-2 mt-2">
+                        <a href="#" class="text-indigo-600 font-medium hover:underline text-[10px]">Ver todas as
+                            empresas <i class="fa-solid fa-angle-right text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <div
+                    class="col-span-3 bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <span class="font-bold text-gray-900 text-sm mb-3 block">Uso de Recursos</span>
+                    <div class="space-y-3 my-auto">
+                        <div>
+                            <div class="flex justify-between text-[10px] text-gray-500 mb-1">
+                                <span class="font-medium text-gray-700">Conversas (IA)</span>
+                                <span>18.742 / 100.000 <span class="text-gray-400 ml-1">18,7%</span></span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-1.5">
+                                <div class="bg-indigo-600 h-1.5 rounded-full" style="width: 18.7%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[10px] text-gray-500 mb-1">
+                                <span class="font-medium text-gray-700">Armazenamento</span>
+                                <span>1,42 TB / 10 TB <span class="text-gray-400 ml-1">14%</span></span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-1.5">
+                                <div class="bg-indigo-600 h-1.5 rounded-full" style="width: 14%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[10px] text-gray-500 mb-1">
+                                <span class="font-medium text-gray-700">Fluxos de IA Executados</span>
+                                <span>3.245 / 10.000 <span class="text-gray-400 ml-1">32,5%</span></span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-1.5">
+                                <div class="bg-indigo-600 h-1.5 rounded-full" style="width: 32.5%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[10px] text-gray-500 mb-1">
+                                <span class="font-medium text-gray-700">API Requests</span>
+                                <span>256.321 / 1.000.000 <span class="text-gray-400 ml-1">25,6%</span></span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-1.5">
+                                <div class="bg-indigo-600 h-1.5 rounded-full" style="width: 25.6%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center border-t pt-2 mt-2">
+                        <a href="#" class="text-indigo-600 font-medium hover:underline text-[10px]">Ver uso completo <i
+                                class="fa-solid fa-angle-right text-[8px]"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-4">
+                <div
+                    class="col-span-4 bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="font-bold text-gray-900 text-sm mb-4 block">Atividade Recente na Plataforma</span>
+                        <div class="space-y-3">
+                            <div class="flex gap-3 items-start text-[11px]">
+                                <div class="bg-indigo-50 text-indigo-600 p-1.5 rounded-lg shrink-0 mt-0.5"><i
+                                        class="fa-solid fa-building text-xs"></i></div>
+                                <div class="flex-1">
+                                    <span class="font-semibold text-gray-800 block">Nova empresa cadastrada</span>
+                                    <span class="text-gray-400">Fit Motors</span>
+                                </div>
+                                <span class="text-[10px] text-gray-400 shrink-0">há 2 min</span>
+                            </div>
+                            <div class="flex gap-3 items-start text-[11px]">
+                                <div class="bg-blue-50 text-blue-600 p-1.5 rounded-lg shrink-0 mt-0.5"><i
+                                        class="fa-solid fa-file-invoice text-xs"></i></div>
+                                <div class="flex-1">
+                                    <span class="font-semibold text-gray-800 block">Novo plano contratado</span>
+                                    <span class="text-gray-400">Clínica Saúde+ - Plano Professional</span>
+                                </div>
+                                <span class="text-[10px] text-gray-400 shrink-0">há 5 min</span>
+                            </div>
+                            <div class="flex gap-3 items-start text-[11px]">
+                                <div class="bg-emerald-50 text-emerald-600 p-1.5 rounded-lg shrink-0 mt-0.5"><i
+                                        class="fa-solid fa-bolt text-xs"></i></div>
+                                <div class="flex-1">
+                                    <span class="font-semibold text-gray-800 block">Pico de uso de IA</span>
+                                    <span class="text-gray-400">Empresa Loja do João atingiu 1.000 conversas com
+                                        IA</span>
+                                </div>
+                                <span class="text-[10px] text-gray-400 shrink-0">há 8 min</span>
+                            </div>
+                            <div class="flex gap-3 items-start text-[11px]">
+                                <div class="bg-amber-50 text-amber-600 p-1.5 rounded-lg shrink-0 mt-0.5"><i
+                                        class="fa-solid fa-user text-xs"></i></div>
+                                <div class="flex-1">
+                                    <span class="font-semibold text-gray-800 block">Novo usuário adicionado</span>
+                                    <span class="text-gray-400">Maria Silva (vendedora) na empresa Construtora
+                                        D&A</span>
+                                </div>
+                                <span class="text-[10px] text-gray-400 shrink-0">há 12 min</span>
+                            </div>
+                            <div class="flex gap-3 items-start text-[11px]">
+                                <div class="bg-rose-50 text-rose-600 p-1.5 rounded-lg shrink-0 mt-0.5"><i
+                                        class="fa-solid fa-triangle-exclamation text-xs"></i></div>
+                                <div class="flex-1">
+                                    <span class="font-semibold text-gray-800 block text-rose-600">Falha de
+                                        integração</span>
+                                    <span class="text-gray-400">Erro na integração WhatsApp - Empresa Tech
+                                        Solutions</span>
+                                </div>
+                                <span class="text-[10px] text-gray-400 shrink-0">há 12 min</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center border-t pt-2 mt-4">
+                        <a href="#" class="text-indigo-600 font-medium hover:underline text-[10px]">Ver todas as
+                            atividades <i class="fa-solid fa-angle-right text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <div
+                    class="col-span-5 bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="font-bold text-gray-900 text-sm mb-3 block">Resumo de Uso por Empresas</span>
+                        <table class="w-full text-left text-[11px]">
+                            <thead>
+                                <tr class="text-gray-400 border-b border-gray-100">
+                                    <th class="pb-2 font-medium">Empresa</th>
+                                    <th class="pb-2 font-medium">Conversas (IA)</th>
+                                    <th class="pb-2 font-medium">Armazenamento</th>
+                                    <th class="pb-2 font-medium">Usuários</th>
+                                    <th class="pb-2 font-medium text-center">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-50 text-gray-700">
+                                <tr>
+                                    <td class="py-2.5 font-medium text-gray-900">Fit Motors</td>
+                                    <td class="py-2.5">2.842</td>
+                                    <td class="py-2.5">250 GB</td>
+                                    <td class="py-2.5">28</td>
+                                    <td class="py-2.5 text-center"><span
+                                            class="bg-emerald-50 text-emerald-600 px-1.5 py-0.5 rounded text-[10px] font-medium">Ativo</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 font-medium text-gray-900">Clínica Saúde+</td>
+                                    <td class="py-2.5">1.986</td>
+                                    <td class="py-2.5">180 GB</td>
+                                    <td class="py-2.5">15</td>
+                                    <td class="py-2.5 text-center"><span
+                                            class="bg-emerald-50 text-emerald-600 px-1.5 py-0.5 rounded text-[10px] font-medium">Ativo</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 font-medium text-gray-900">Loja do João</td>
+                                    <td class="py-2.5">1.523</td>
+                                    <td class="py-2.5">120 GB</td>
+                                    <td class="py-2.5">8</td>
+                                    <td class="py-2.5 text-center"><span
+                                            class="bg-emerald-50 text-emerald-600 px-1.5 py-0.5 rounded text-[10px] font-medium">Ativo</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 font-medium text-gray-900">Construtora D&A</td>
+                                    <td class="py-2.5">1.102</td>
+                                    <td class="py-2.5">95 GB</td>
+                                    <td class="py-2.5">12</td>
+                                    <td class="py-2.5 text-center"><span
+                                            class="bg-emerald-50 text-emerald-600 px-1.5 py-0.5 rounded text-[10px] font-medium">Ativo</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 font-medium text-gray-900">Tech Solutions</td>
+                                    <td class="py-2.5">987</td>
+                                    <td class="py-2.5">85 GB</td>
+                                    <td class="py-2.5">6</td>
+                                    <td class="py-2.5 text-center"><span
+                                            class="bg-emerald-50 text-emerald-600 px-1.5 py-0.5 rounded text-[10px] font-medium">Ativo</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center border-t pt-2 mt-2">
+                        <a href="#" class="text-indigo-600 font-medium hover:underline text-[10px]">Ver todas as
+                            empresas <i class="fa-solid fa-angle-right text-[8px]"></i></a>
+                    </div>
+                </div>
+
+                <div
+                    class="col-span-3 bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="font-bold text-gray-900 text-sm mb-4 block">Alertas do Sistema</span>
+                        <div class="space-y-3">
+                            <div
+                                class="flex items-center justify-between border border-gray-100 rounded-lg p-2.5 bg-gray-50 hover:bg-gray-100 transition cursor-pointer">
+                                <div class="flex gap-2 items-start text-[11px]">
+                                    <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-0.5 text-xs"></i>
+                                    <div>
+                                        <span class="font-semibold text-gray-800 block leading-tight">5 empresas
+                                            próximas do limite</span>
+                                        <span class="text-gray-400 text-[10px]">Verifique os limites de uso</span>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right text-gray-300 text-[9px]"></i>
+                            </div>
+                            <div
+                                class="flex items-center justify-between border border-gray-100 rounded-lg p-2.5 bg-gray-50 hover:bg-gray-100 transition cursor-pointer">
+                                <div class="flex gap-2 items-start text-[11px]">
+                                    <i class="fa-solid fa-circle-info text-blue-500 mt-0.5 text-xs"></i>
+                                    <div>
+                                        <span class="font-semibold text-gray-800 block leading-tight">12 integrações com
+                                            falhas</span>
+                                        <span class="text-gray-400 text-[10px]">Acesse os logs para mais detalhes</span>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right text-gray-300 text-[9px]"></i>
+                            </div>
+                            <div
+                                class="flex items-center justify-between border border-gray-100 rounded-lg p-2.5 bg-gray-50 hover:bg-gray-100 transition cursor-pointer">
+                                <div class="flex gap-2 items-start text-[11px]">
+                                    <i class="fa-solid fa-circle-up text-indigo-500 mt-0.5 text-xs"></i>
+                                    <div>
+                                        <span class="font-semibold text-gray-800 block leading-tight">Atualização
+                                            disponível</span>
+                                        <span class="text-gray-400 text-[10px]">Versão 2.4.0 pronta para deploy</span>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-chevron-right text-gray-300 text-[9px]"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center border-t pt-2 mt-4">
+                        <a href="#" class="text-indigo-600 font-medium hover:underline text-[10px]">Ver todos os alertas
+                            <i class="fa-solid fa-angle-right text-[8px]"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                <span class="font-bold text-gray-900 text-sm mb-4 block">Resumo Geral da Plataforma</span>
+                <div class="grid grid-cols-6 divide-x divide-gray-100 text-center">
+                    <div>
+                        <span class="text-gray-400 block text-[10px] mb-0.5">Leads Totais</span>
+                        <span class="text-base font-bold text-gray-900 block leading-tight">125.430</span>
+                        <span class="text-emerald-500 text-[9px] font-medium"><i
+                                class="fa-solid fa-arrow-up mr-0.5"></i>14,2% <span class="text-gray-400 font-normal">vs
+                                mês anterior</span></span>
+                    </div>
+                    <div>
+                        <span class="text-gray-400 block text-[10px] mb-0.5">Conversas Totais (IA)</span>
+                        <span class="text-base font-bold text-gray-900 block leading-tight">98.765</span>
+                        <span class="text-emerald-500 text-[9px] font-medium"><i
+                                class="fa-solid fa-arrow-up mr-0.5"></i>11,3% <span class="text-gray-400 font-normal">vs
+                                mês anterior</span></span>
+                    </div>
+                    <div>
+                        <span class="text-gray-400 block text-[10px] mb-0.5">Taxa de Resposta (IA)</span>
+                        <span class="text-base font-bold text-gray-900 block leading-tight">78,6%</span>
+                        <span class="text-emerald-500 text-[9px] font-medium"><i
+                                class="fa-solid fa-arrow-up mr-0.5"></i>+5,7 p.p. <span
+                                class="text-gray-400 font-normal">vs mês anterior</span></span>
+                    </div>
+                    <div>
+                        <span class="text-gray-400 block text-[10px] mb-0.5">Satisfação Média</span>
+                        <span class="text-base font-bold text-gray-900 block leading-tight">4,6/5</span>
+                        <span class="text-emerald-500 text-[9px] font-medium"><i
+                                class="fa-solid fa-arrow-up mr-0.5"></i>+0,3 <span class="text-gray-400 font-normal">vs
+                                mês anterior</span></span>
+                    </div>
+                    <div>
+                        <span class="text-gray-400 block text-[10px] mb-0.5">Uptime da Plataforma</span>
+                        <span class="text-base font-bold text-gray-900 block leading-tight">99,98%</span>
+                        <span class="text-emerald-500 text-[9px] font-medium"><i
+                                class="fa-solid fa-arrow-up mr-0.5"></i>+0,02% <span
+                                class="text-gray-400 font-normal">vs mês anterior</span></span>
+                    </div>
+                    <div>
+                        <span class="text-gray-400 block text-[10px] mb-0.5">Tickets Abertos</span>
+                        <span class="text-base font-bold text-gray-900 block leading-tight">8</span>
+                        <span class="text-emerald-500 text-[9px] font-medium"><i
+                                class="fa-solid fa-arrow-down mr-0.5"></i>-11,1% <span
+                                class="text-gray-400 font-normal">vs mês anterior</span></span>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadStock — CRM Whitelabel Modular para Agências</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { DEFAULT: '#635bff', dark: '#4f46e5' },
+                        ink: '#0B0E2A',
+                        paper: '#F7F7FB',
+                    },
+                    fontFamily: {
+                        display: ['Fraunces', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        :root { --demo-brand: #635bff; --demo-brand-dark: #4f46e5; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { text-wrap: balance; }
+        .tabular { font-variant-numeric: tabular-nums; }
+        .demo-bg { background-color: var(--demo-brand); }
+        .demo-text { color: var(--demo-brand); }
+        .demo-border { border-color: var(--demo-brand); }
+        .demo-tint { background-color: color-mix(in srgb, var(--demo-brand) 12%, white); }
+        .demo-ring { box-shadow: 0 0 0 2px color-mix(in srgb, var(--demo-brand) 35%, transparent); }
+        .swatch-active { box-shadow: 0 0 0 2px white, 0 0 0 4px var(--swatch-color, #0B0E2A); }
+        a, button { transition: color .15s ease, background-color .15s ease, border-color .15s ease, opacity .15s ease, box-shadow .15s ease; }
+        :focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+
+<body class="bg-paper text-gray-800 antialiased">
+
+    <header class="sticky top-0 z-40 border-b border-gray-100 bg-paper/90 backdrop-blur">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center">
+                    <i class="fa-solid fa-layer-group text-sm"></i>
+                </div>
+                <span class="font-display font-semibold text-lg text-gray-900 tracking-tight">LeadStock</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+                <a href="#modulos" class="hover:text-gray-900">Módulos</a>
+                <a href="#whitelabel" class="hover:text-gray-900">Whitelabel</a>
+                <a href="#como-funciona" class="hover:text-gray-900">Como funciona</a>
+                <a href="#para-quem" class="hover:text-gray-900">Para quem é</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="hidden sm:inline text-sm font-medium text-gray-600 hover:text-gray-900">Entrar</a>
+                <a href="#cta" class="inline-flex items-center gap-2 rounded-lg bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-4 py-2.5">
+                    Agendar demonstração
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="max-w-7xl mx-auto px-6 md:px-8 pt-16 pb-20 md:pt-24 md:pb-28 grid lg:grid-cols-2 gap-14 items-center">
+            <div>
+                <span class="font-mono text-xs font-semibold tracking-widest text-primary uppercase">CRM whitelabel modular</span>
+                <h1 class="font-display mt-4 text-4xl md:text-[3.25rem] leading-[1.08] font-semibold text-gray-900">
+                    Um CRM só seu. Uma marca em cada cliente.
+                </h1>
+                <p class="mt-6 text-lg text-gray-500 leading-relaxed max-w-lg">
+                    O LeadStock é o motor por trás do produto que você entrega. Dashboard, WhatsApp, estoque, leads e
+                    relatórios em módulos independentes — ative só o que cada cliente precisa e apresente tudo com o
+                    logotipo, as cores e o domínio da empresa dele.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="#cta" class="inline-flex items-center gap-2 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold px-5 py-3">
+                        Agendar demonstração <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#modulos" class="inline-flex items-center gap-2 rounded-lg border border-gray-200 hover:border-gray-300 text-gray-700 font-semibold px-5 py-3">
+                        Ver os módulos
+                    </a>
+                </div>
+                <dl class="mt-12 grid grid-cols-3 gap-6 max-w-md">
+                    <div>
+                        <dt class="font-mono tabular text-2xl font-semibold text-gray-900">5</dt>
+                        <dd class="text-xs text-gray-500 mt-1">módulos combináveis</dd>
+                    </div>
+                    <div>
+                        <dt class="font-mono tabular text-2xl font-semibold text-gray-900">100%</dt>
+                        <dd class="text-xs text-gray-500 mt-1">identidade whitelabel</dd>
+                    </div>
+                    <div>
+                        <dt class="font-mono tabular text-2xl font-semibold text-gray-900">1</dt>
+                        <dd class="text-xs text-gray-500 mt-1">domínio próprio por cliente</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div>
+                <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-semibold text-gray-500">Personalize a prévia</span>
+                        <div class="flex items-center gap-2">
+                            <button type="button" data-swatch="#635bff" style="--swatch-color:#635bff" class="swatch-active w-6 h-6 rounded-full bg-[#635bff]" aria-label="Aplicar cor índigo (padrão LeadStock)" aria-pressed="true"></button>
+                            <button type="button" data-swatch="#10B981" style="--swatch-color:#10B981" class="w-6 h-6 rounded-full bg-[#10B981]" aria-label="Aplicar cor esmeralda" aria-pressed="false"></button>
+                            <button type="button" data-swatch="#F59E0B" style="--swatch-color:#F59E0B" class="w-6 h-6 rounded-full bg-[#F59E0B]" aria-label="Aplicar cor âmbar" aria-pressed="false"></button>
+                            <button type="button" data-swatch="#E11D48" style="--swatch-color:#E11D48" class="w-6 h-6 rounded-full bg-[#E11D48]" aria-label="Aplicar cor rosa" aria-pressed="false"></button>
+                            <button type="button" data-swatch="#0EA5E9" style="--swatch-color:#0EA5E9" class="w-6 h-6 rounded-full bg-[#0EA5E9]" aria-label="Aplicar cor ciano" aria-pressed="false"></button>
+                        </div>
+                    </div>
+
+                    <div class="rounded-lg border border-gray-200 overflow-hidden">
+                        <div class="h-8 bg-gray-50 border-b border-gray-200 flex items-center gap-1.5 px-3">
+                            <span class="w-2.5 h-2.5 rounded-full bg-gray-300"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-gray-300"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-gray-300"></span>
+                            <span class="ml-3 font-mono text-[10px] text-gray-400" id="preview-domain">app.suaempresa.com.br</span>
+                        </div>
+                        <div class="flex h-72">
+                            <aside class="w-32 bg-ink flex flex-col shrink-0">
+                                <div class="p-3 flex items-center gap-2 border-b border-white/10">
+                                    <span class="demo-bg w-6 h-6 rounded-md flex items-center justify-center">
+                                        <i class="fa-solid fa-layer-group text-white text-[10px]"></i>
+                                    </span>
+                                    <span class="text-white text-[11px] font-semibold">SuaMarca</span>
+                                </div>
+                                <nav class="p-2 space-y-1 text-[10px] font-medium">
+                                    <div class="demo-bg text-white rounded-md px-2 py-1.5 flex items-center gap-2">
+                                        <i class="fa-solid fa-gauge w-3"></i> Dashboard
+                                    </div>
+                                    <div id="preview-nav-whatsapp" class="text-gray-400 rounded-md px-2 py-1.5 flex items-center gap-2">
+                                        <i class="fa-brands fa-whatsapp w-3"></i> WhatsApp
+                                    </div>
+                                    <div id="preview-nav-leads" class="text-gray-400 rounded-md px-2 py-1.5 flex items-center gap-2">
+                                        <i class="fa-solid fa-filter w-3"></i> Leads
+                                    </div>
+                                    <div id="preview-nav-estoque" class="hidden text-gray-400 rounded-md px-2 py-1.5 flex items-center gap-2">
+                                        <i class="fa-solid fa-box w-3"></i> Estoque
+                                    </div>
+                                    <div id="preview-nav-relatorios" class="hidden text-gray-400 rounded-md px-2 py-1.5 flex items-center gap-2">
+                                        <i class="fa-solid fa-file-pdf w-3"></i> Relatórios
+                                    </div>
+                                    <div class="text-gray-400 rounded-md px-2 py-1.5 flex items-center gap-2">
+                                        <i class="fa-solid fa-gear w-3"></i> Config.
+                                    </div>
+                                </nav>
+                            </aside>
+                            <div class="flex-1 bg-white p-3">
+                                <div class="text-[11px] font-semibold text-gray-800 mb-2">Visão geral</div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="demo-tint rounded-md p-2">
+                                        <span class="text-[9px] text-gray-500 block">Leads no mês</span>
+                                        <span class="demo-text font-mono tabular text-sm font-semibold">248</span>
+                                    </div>
+                                    <div class="demo-tint rounded-md p-2">
+                                        <span class="text-[9px] text-gray-500 block">Conversas WhatsApp</span>
+                                        <span class="demo-text font-mono tabular text-sm font-semibold">1.024</span>
+                                    </div>
+                                </div>
+                                <div class="mt-2 rounded-md border border-gray-100 p-2">
+                                    <span class="text-[9px] text-gray-500 block mb-1">Taxa de conversão</span>
+                                    <div class="w-full bg-gray-100 rounded-full h-1.5">
+                                        <div class="demo-bg h-1.5 rounded-full" style="width: 62%"></div>
+                                    </div>
+                                </div>
+                                <div class="mt-2 rounded-md border border-gray-100 p-2 text-[9px] text-gray-500">
+                                    Relatório PDF agendado para sexta-feira
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-xs text-gray-500">Módulos ativos: <span id="module-count" class="font-mono font-semibold text-gray-800">3</span> de 5</span>
+                    </div>
+                    <div class="mt-2 flex flex-wrap gap-2">
+                        <button type="button" class="rounded-full border border-gray-200 bg-gray-50 text-gray-400 text-xs font-medium px-3 py-1.5 cursor-not-allowed" disabled>
+                            <i class="fa-solid fa-check text-[10px] mr-1"></i>Dashboard
+                        </button>
+                        <button type="button" data-module-toggle data-target="preview-nav-whatsapp" aria-pressed="true" class="module-chip demo-bg text-white rounded-full text-xs font-medium px-3 py-1.5">
+                            <i class="fa-brands fa-whatsapp text-[10px] mr-1"></i>WhatsApp
+                        </button>
+                        <button type="button" data-module-toggle data-target="preview-nav-leads" aria-pressed="true" class="module-chip demo-bg text-white rounded-full text-xs font-medium px-3 py-1.5">
+                            <i class="fa-solid fa-filter text-[10px] mr-1"></i>Leads
+                        </button>
+                        <button type="button" data-module-toggle data-target="preview-nav-estoque" aria-pressed="false" class="module-chip border border-gray-200 text-gray-500 rounded-full text-xs font-medium px-3 py-1.5">
+                            <i class="fa-solid fa-box text-[10px] mr-1"></i>Estoque
+                        </button>
+                        <button type="button" data-module-toggle data-target="preview-nav-relatorios" aria-pressed="false" class="module-chip border border-gray-200 text-gray-500 rounded-full text-xs font-medium px-3 py-1.5">
+                            <i class="fa-solid fa-file-pdf text-[10px] mr-1"></i>Relatórios
+                        </button>
+                        <button type="button" class="rounded-full border border-gray-200 bg-gray-50 text-gray-400 text-xs font-medium px-3 py-1.5 cursor-not-allowed" disabled>
+                            <i class="fa-solid fa-check text-[10px] mr-1"></i>Config.
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-y border-gray-100 bg-white">
+            <div class="max-w-5xl mx-auto px-6 md:px-8 py-10 text-center">
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-display">
+                    Você não está vendendo uma licença de software. Está vendendo
+                    <span class="text-primary font-medium">métrica, atendimento e organização</span>
+                    com a cara da sua agência — o LeadStock só fica por trás da cortina.
+                </p>
+            </div>
+        </section>
+
+        <section id="modulos" class="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28">
+            <div class="max-w-2xl">
+                <span class="font-mono text-xs font-semibold tracking-widest text-primary uppercase">Módulos</span>
+                <h2 class="font-display mt-3 text-3xl md:text-4xl font-semibold text-gray-900">
+                    Monte o pacote certo para cada cliente.
+                </h2>
+                <p class="mt-4 text-gray-500 leading-relaxed">
+                    Dashboard e Configurações vêm inclusos em qualquer plano. A partir daí, você escolhe — e cobra —
+                    só pelos módulos que cada cliente realmente vai usar.
+                </p>
+            </div>
+
+            <div class="mt-12 grid md:grid-cols-2 gap-5">
+                <article class="rounded-xl border border-gray-200 bg-white p-6">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="mt-4 font-display font-semibold text-lg text-gray-900">WhatsApp</h3>
+                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                        Caixa de entrada omnichannel com WhatsApp, Instagram e e-mail centralizados, mais respostas
+                        automáticas por IA fora do horário comercial.
+                    </p>
+                </article>
+                <article class="rounded-xl border border-gray-200 bg-white p-6">
+                    <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+                    <h3 class="mt-4 font-display font-semibold text-lg text-gray-900">Estoque</h3>
+                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                        Controle de estoque em tempo real com alertas de ruptura, conectado direto ao funil de vendas
+                        para evitar venda perdida por falta de produto.
+                    </p>
+                </article>
+                <article class="rounded-xl border border-gray-200 bg-white p-6">
+                    <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                        <i class="fa-solid fa-filter"></i>
+                    </div>
+                    <h3 class="mt-4 font-display font-semibold text-lg text-gray-900">Leads</h3>
+                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                        Pipeline visual, captação multicanal e histórico completo de cada lead — do primeiro contato
+                        até o fechamento.
+                    </p>
+                </article>
+                <article class="rounded-xl border border-gray-200 bg-white p-6">
+                    <div class="w-10 h-10 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <h3 class="mt-4 font-display font-semibold text-lg text-gray-900">Relatórios</h3>
+                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                        Relatórios avançados em PDF e exportações agendadas, com a marca do seu cliente, prontos para
+                        enviar sem edição manual.
+                    </p>
+                </article>
+            </div>
+
+            <div class="mt-5 rounded-xl border border-dashed border-gray-300 bg-gray-50 p-5 flex flex-wrap items-center gap-4 justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                        <i class="fa-solid fa-gauge"></i>
+                    </div>
+                    <div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">Dashboard e Configurações whitelabel</span>
+                </div>
+                <span class="font-mono text-[11px] font-semibold text-gray-500 uppercase tracking-wide bg-white border border-gray-200 rounded-full px-3 py-1">
+                    Incluso em todos os planos
+                </span>
+            </div>
+        </section>
+
+        <section id="whitelabel" class="bg-ink">
+            <div class="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 grid lg:grid-cols-2 gap-14 items-center">
+                <div>
+                    <span class="font-mono text-xs font-semibold tracking-widest text-primary uppercase">Whitelabel</span>
+                    <h2 class="font-display mt-3 text-3xl md:text-4xl font-semibold text-white">
+                        A ferramenta é nossa. A marca é do seu cliente.
+                    </h2>
+                    <p class="mt-4 text-gray-400 leading-relaxed max-w-lg">
+                        Configure a identidade visual uma vez por cliente e o produto passa a se comportar como se
+                        fosse desenvolvido internamente por ele.
+                    </p>
+                    <ul class="mt-8 space-y-5">
+                        <li class="flex gap-3">
+                            <i class="fa-solid fa-check text-primary mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Logotipo e ícone próprios</strong>
+                                <span class="text-sm text-gray-400">Substituem a marca LeadStock em toda a interface, inclusive nos PDFs gerados.</span>
+                            </div>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fa-solid fa-check text-primary mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Paleta de cores da empresa</strong>
+                                <span class="text-sm text-gray-400">Sidebar, botões e gráficos seguem a cor de marca definida, como na prévia acima.</span>
+                            </div>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fa-solid fa-check text-primary mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Domínio e nome do produto</strong>
+                                <span class="text-sm text-gray-400">app.suaempresa.com.br, com o nome do produto que você quiser dar a ele.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="rounded-xl bg-white/5 border border-white/10 p-6">
+                    <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wide">Configurações › Marca</span>
+                    <div class="mt-4 space-y-4">
+                        <div class="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 p-3">
+                            <span class="text-sm text-gray-300">Nome do produto</span>
+                            <span class="font-mono text-sm text-white">SuaMarca CRM</span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 p-3">
+                            <span class="text-sm text-gray-300">Logotipo</span>
+                            <span class="inline-flex items-center gap-2 text-sm text-white">
+                                <span class="w-5 h-5 rounded bg-primary"></span> logo-suamarca.svg
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 p-3">
+                            <span class="text-sm text-gray-300">Cor de destaque</span>
+                            <span class="inline-flex items-center gap-2 font-mono text-sm text-white">
+                                <span class="w-3.5 h-3.5 rounded-full bg-primary"></span> #635BFF
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 p-3">
+                            <span class="text-sm text-gray-300">Domínio</span>
+                            <span class="font-mono text-sm text-white flex items-center gap-2">
+                                <i class="fa-solid fa-globe text-gray-500 text-xs"></i> app.suamarca.com.br
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28">
+            <div class="max-w-2xl">
+                <span class="font-mono text-xs font-semibold tracking-widest text-primary uppercase">Como funciona</span>
+                <h2 class="font-display mt-3 text-3xl md:text-4xl font-semibold text-gray-900">
+                    Da configuração à entrega, em três passos.
+                </h2>
+            </div>
+            <ol class="mt-12 grid md:grid-cols-3 gap-8">
+                <li>
+                    <span class="font-display text-4xl font-semibold text-primary/30">01</span>
+                    <h3 class="mt-3 font-display font-semibold text-lg text-gray-900">Escolha os módulos</h3>
+                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                        Defina se o cliente precisa de WhatsApp, Estoque, Leads, Relatórios — ou de todos eles.
+                    </p>
+                </li>
+                <li>
+                    <span class="font-display text-4xl font-semibold text-primary/30">02</span>
+                    <h3 class="mt-3 font-display font-semibold text-lg text-gray-900">Aplique a marca dele</h3>
+                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                        Logotipo, cor de destaque, nome do produto e domínio próprio, direto em Configurações.
+                    </p>
+                </li>
+                <li>
+                    <span class="font-display text-4xl font-semibold text-primary/30">03</span>
+                    <h3 class="mt-3 font-display font-semibold text-lg text-gray-900">Entregue como seu produto</h3>
+                    <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+                        O cliente acessa o CRM sem nunca ver o nome LeadStock — só a marca dele.
+                    </p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="para-quem" class="bg-white border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28">
+                <div class="max-w-2xl">
+                    <span class="font-mono text-xs font-semibold tracking-widest text-primary uppercase">Para quem é</span>
+                    <h2 class="font-display mt-3 text-3xl md:text-4xl font-semibold text-gray-900">
+                        Feito para quem revende, não só para quem usa.
+                    </h2>
+                </div>
+                <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="rounded-xl border border-gray-200 p-5">
+                        <i class="fa-solid fa-bullhorn text-primary"></i>
+                        <h3 class="mt-3 font-semibold text-gray-900 text-sm">Agências de marketing</h3>
+                        <p class="mt-2 text-xs text-gray-500 leading-relaxed">Entregam métrica e atendimento como parte do pacote mensal, com a marca da agência.</p>
+                    </div>
+                    <div class="rounded-xl border border-gray-200 p-5">
+                        <i class="fa-solid fa-people-arrows text-primary"></i>
+                        <h3 class="mt-3 font-semibold text-gray-900 text-sm">Consultorias de CRM</h3>
+                        <p class="mt-2 text-xs text-gray-500 leading-relaxed">Implantam um CRM completo em cada cliente sem manter equipe própria de desenvolvimento.</p>
+                    </div>
+                    <div class="rounded-xl border border-gray-200 p-5">
+                        <i class="fa-solid fa-store text-primary"></i>
+                        <h3 class="mt-3 font-semibold text-gray-900 text-sm">ERPs e softwares regionais</h3>
+                        <p class="mt-2 text-xs text-gray-500 leading-relaxed">Adicionam CRM e atendimento ao portfólio sem construir esses módulos do zero.</p>
+                    </div>
+                    <div class="rounded-xl border border-gray-200 p-5">
+                        <i class="fa-brands fa-whatsapp text-primary"></i>
+                        <h3 class="mt-3 font-semibold text-gray-900 text-sm">Integradores de WhatsApp</h3>
+                        <p class="mt-2 text-xs text-gray-500 leading-relaxed">Transformam a API do WhatsApp em um produto de atendimento completo e vendável.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="bg-ink">
+            <div class="max-w-4xl mx-auto px-6 md:px-8 py-20 text-center">
+                <h2 class="font-display text-3xl md:text-4xl font-semibold text-white">
+                    Pronto para vender o seu próprio CRM?
+                </h2>
+                <p class="mt-4 text-gray-400 max-w-xl mx-auto">
+                    Agende uma demonstração e veja o LeadStock com a marca do seu cliente ainda na chamada.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+                    <a href="mailto:contato@leadstock.com.br" class="inline-flex items-center gap-2 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3">
+                        Agendar demonstração
+                    </a>
+                    <a href="https://wa.me/5500000000000" class="inline-flex items-center gap-2 rounded-lg border border-white/15 text-white font-semibold px-6 py-3 hover:border-white/30">
+                        <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 py-12 grid md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center gap-2.5">
+                    <div class="w-7 h-7 rounded-lg bg-primary text-white flex items-center justify-center">
+                        <i class="fa-solid fa-layer-group text-xs"></i>
+                    </div>
+                    <span class="font-display font-semibold text-gray-900">LeadStock</span>
+                </div>
+                <p class="mt-3 text-sm text-gray-500 max-w-xs">CRM whitelabel modular para quem revende métrica, atendimento e organização com a própria marca.</p>
+            </div>
+            <div>
+                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Produto</span>
+                <ul class="mt-3 space-y-2 text-sm text-gray-600">
+                    <li><a href="#modulos" class="hover:text-gray-900">Módulos</a></li>
+                    <li><a href="#whitelabel" class="hover:text-gray-900">Whitelabel</a></li>
+                    <li><a href="#como-funciona" class="hover:text-gray-900">Como funciona</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Contato</span>
+                <ul class="mt-3 space-y-2 text-sm text-gray-600">
+                    <li><a href="mailto:contato@leadstock.com.br" class="hover:text-gray-900">contato@leadstock.com.br</a></li>
+                    <li><a href="https://wa.me/5500000000000" class="hover:text-gray-900">WhatsApp comercial</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-100 py-6 text-center text-xs text-gray-400">
+            <p>&copy; <span id="year"></span> LeadStock. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.querySelectorAll('[data-swatch]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                document.documentElement.style.setProperty('--demo-brand', btn.dataset.swatch);
+                document.querySelectorAll('[data-swatch]').forEach(function (b) { b.classList.remove('swatch-active'); b.setAttribute('aria-pressed', 'false'); });
+                btn.classList.add('swatch-active');
+                btn.setAttribute('aria-pressed', 'true');
+                document.querySelectorAll('.module-chip[aria-pressed="true"]').forEach(function (chip) {
+                    chip.classList.add('demo-bg');
+                });
+            });
+        });
+
+        function updateModuleCount() {
+            var active = document.querySelectorAll('.module-chip[aria-pressed="true"]').length + 2;
+            document.getElementById('module-count').textContent = active;
+        }
+
+        document.querySelectorAll('[data-module-toggle]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var isActive = btn.getAttribute('aria-pressed') === 'true';
+                var target = document.getElementById(btn.dataset.target);
+                btn.setAttribute('aria-pressed', String(!isActive));
+                target.classList.toggle('hidden', isActive);
+                if (isActive) {
+                    btn.classList.remove('demo-bg', 'text-white');
+                    btn.classList.add('border', 'border-gray-200', 'text-gray-500');
+                } else {
+                    btn.classList.remove('border', 'border-gray-200', 'text-gray-500');
+                    btn.classList.add('demo-bg', 'text-white');
+                }
+                updateModuleCount();
+            });
+        });
+
+        updateModuleCount();
+    </script>
+</body>
+
+</html>
