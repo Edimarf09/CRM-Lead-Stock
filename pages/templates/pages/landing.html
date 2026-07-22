@@ -1,0 +1,387 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadStock — CRM Whitelabel Modular para Agências</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'pages/css/landing.css' %}">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="brand">
+                <div class="brand-badge"><img src="{% static 'pages/images/icone_logo.svg' %}" alt=""></div>
+                <span class="brand-name">LeadStock</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#modulos">Módulos</a>
+                <a href="#whitelabel">Whitelabel</a>
+                <a href="#como-funciona">Como funciona</a>
+                <a href="#para-quem">Para quem é</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="link-muted">Entrar</a>
+                <a href="#cta" class="btn btn-primary">Agendar demonstração</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="container hero">
+            <div>
+                <span class="eyebrow">CRM whitelabel modular</span>
+                <h1 class="hero-title">Um CRM só seu. Uma marca em cada cliente.</h1>
+                <p class="hero-lead">
+                    O LeadStock é o motor por trás do produto que você entrega. Dashboard, WhatsApp, estoque, leads e
+                    relatórios em módulos independentes — ative só o que cada cliente precisa e apresente tudo com o
+                    logotipo, as cores e o domínio da empresa dele.
+                </p>
+                <div class="hero-cta">
+                    <a href="#cta" class="btn btn-primary btn-lg">
+                        Agendar demonstração <img src="{% static 'pages/images/icone_seta.svg' %}" alt="">
+                    </a>
+                    <a href="#modulos" class="btn btn-outline btn-lg">Ver os módulos</a>
+                </div>
+                <dl class="hero-stats">
+                    <div>
+                        <dt>5</dt>
+                        <dd>módulos combináveis</dd>
+                    </div>
+                    <div>
+                        <dt>100%</dt>
+                        <dd>identidade whitelabel</dd>
+                    </div>
+                    <div>
+                        <dt>1</dt>
+                        <dd>domínio próprio por cliente</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div>
+                <div class="preview-card">
+                    <div class="preview-head">
+                        <span class="preview-head-label">Personalize a prévia</span>
+                        <div class="swatches">
+                            <button type="button" class="swatch is-active" data-swatch="#635bff" style="--swatch-color:#635bff" aria-label="Aplicar cor índigo (padrão LeadStock)" aria-pressed="true"></button>
+                            <button type="button" class="swatch" data-swatch="#10B981" style="--swatch-color:#10B981" aria-label="Aplicar cor esmeralda" aria-pressed="false"></button>
+                            <button type="button" class="swatch" data-swatch="#F59E0B" style="--swatch-color:#F59E0B" aria-label="Aplicar cor âmbar" aria-pressed="false"></button>
+                            <button type="button" class="swatch" data-swatch="#E11D48" style="--swatch-color:#E11D48" aria-label="Aplicar cor rosa" aria-pressed="false"></button>
+                            <button type="button" class="swatch" data-swatch="#0EA5E9" style="--swatch-color:#0EA5E9" aria-label="Aplicar cor ciano" aria-pressed="false"></button>
+                        </div>
+                    </div>
+
+                    <div class="browser">
+                        <div class="browser-bar">
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-dot"></span>
+                            <span class="browser-url" id="preview-domain">app.suaempresa.com.br</span>
+                        </div>
+                        <div class="browser-body">
+                            <aside class="preview-sidebar">
+                                <div class="preview-sidebar-head">
+                                    <span class="preview-sidebar-badge"><img src="{% static 'pages/images/icone_logo.svg' %}" alt=""></span>
+                                    <span class="preview-sidebar-brand">SuaMarca</span>
+                                </div>
+                                <nav class="preview-nav">
+                                    <div class="preview-nav-item is-active"><img src="{% static 'pages/images/icone_dashboard.svg' %}" alt=""> Dashboard</div>
+                                    <div class="preview-nav-item" id="preview-nav-whatsapp"><img src="{% static 'pages/images/icone_whatsapp.svg' %}" alt=""> WhatsApp</div>
+                                    <div class="preview-nav-item" id="preview-nav-leads"><img src="{% static 'pages/images/icone_leads.svg' %}" alt=""> Leads</div>
+                                    <div class="preview-nav-item hidden" id="preview-nav-estoque"><img src="{% static 'pages/images/icone_estoque.svg' %}" alt=""> Estoque</div>
+                                    <div class="preview-nav-item hidden" id="preview-nav-relatorios"><img src="{% static 'pages/images/icone_relatorios.svg' %}" alt=""> Relatórios</div>
+                                    <div class="preview-nav-item"><img src="{% static 'pages/images/icone_config.svg' %}" alt=""> Config.</div>
+                                </nav>
+                            </aside>
+                            <div class="preview-main">
+                                <div class="preview-main-title">Visão geral</div>
+                                <div class="preview-grid">
+                                    <div class="preview-metric">
+                                        <span class="preview-metric-label">Leads no mês</span>
+                                        <span class="preview-metric-value">248</span>
+                                    </div>
+                                    <div class="preview-metric">
+                                        <span class="preview-metric-label">Conversas WhatsApp</span>
+                                        <span class="preview-metric-value">1.024</span>
+                                    </div>
+                                </div>
+                                <div class="preview-block">
+                                    <span class="preview-block-label">Taxa de conversão</span>
+                                    <div class="preview-bar-track">
+                                        <div class="preview-bar-fill" style="width: 62%"></div>
+                                    </div>
+                                </div>
+                                <div class="preview-note">Relatório PDF agendado para sexta-feira</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preview-footer">
+                        <span class="preview-footer-text">Módulos ativos: <span class="preview-footer-count" id="module-count">3</span> de 5</span>
+                    </div>
+                    <div class="chips">
+                        <button type="button" class="chip is-locked" disabled>
+                            <img src="{% static 'pages/images/icone_check.svg' %}" alt="">Dashboard
+                        </button>
+                        <button type="button" class="chip is-active" data-module-toggle data-target="preview-nav-whatsapp" aria-pressed="true">
+                            <img src="{% static 'pages/images/icone_whatsapp.svg' %}" alt="">WhatsApp
+                        </button>
+                        <button type="button" class="chip is-active" data-module-toggle data-target="preview-nav-leads" aria-pressed="true">
+                            <img src="{% static 'pages/images/icone_leads.svg' %}" alt="">Leads
+                        </button>
+                        <button type="button" class="chip" data-module-toggle data-target="preview-nav-estoque" aria-pressed="false">
+                            <img src="{% static 'pages/images/icone_estoque.svg' %}" alt="">Estoque
+                        </button>
+                        <button type="button" class="chip" data-module-toggle data-target="preview-nav-relatorios" aria-pressed="false">
+                            <img src="{% static 'pages/images/icone_relatorios.svg' %}" alt="">Relatórios
+                        </button>
+                        <button type="button" class="chip is-locked" disabled>
+                            <img src="{% static 'pages/images/icone_check.svg' %}" alt="">Config.
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FRASE DESTAQUE -->
+        <section class="pull-quote-section">
+            <div class="container container-5xl">
+                <p class="pull-quote">
+                    Você não está vendendo uma licença de software. Está vendendo
+                    <span class="accent">métrica, atendimento e organização</span>
+                    com a cara da sua agência — o LeadStock só fica por trás da cortina.
+                </p>
+            </div>
+        </section>
+
+        <!-- MÓDULOS -->
+        <section id="modulos" class="container section">
+            <div class="section-header">
+                <span class="eyebrow">Módulos</span>
+                <h2 class="section-title">Monte o pacote certo para cada cliente.</h2>
+                <p class="section-lead">
+                    Dashboard e Configurações vêm inclusos em qualquer plano. A partir daí, você escolhe — e cobra —
+                    só pelos módulos que cada cliente realmente vai usar.
+                </p>
+            </div>
+
+            <div class="modules-grid">
+                <article class="module-card">
+                    <div class="module-icon emerald"><img src="{% static 'pages/images/icone_whatsapp.svg' %}" alt=""></div>
+                    <h3>WhatsApp</h3>
+                    <p>
+                        Caixa de entrada omnichannel com WhatsApp, Instagram e e-mail centralizados, mais respostas
+                        automáticas por IA fora do horário comercial.
+                    </p>
+                </article>
+                <article class="module-card">
+                    <div class="module-icon amber"><img src="{% static 'pages/images/icone_estoque.svg' %}" alt=""></div>
+                    <h3>Estoque</h3>
+                    <p>
+                        Controle de estoque em tempo real com alertas de ruptura, conectado direto ao funil de vendas
+                        para evitar venda perdida por falta de produto.
+                    </p>
+                </article>
+                <article class="module-card">
+                    <div class="module-icon blue"><img src="{% static 'pages/images/icone_leads.svg' %}" alt=""></div>
+                    <h3>Leads</h3>
+                    <p>
+                        Pipeline visual, captação multicanal e histórico completo de cada lead — do primeiro contato
+                        até o fechamento.
+                    </p>
+                </article>
+                <article class="module-card">
+                    <div class="module-icon rose"><img src="{% static 'pages/images/icone_relatorios.svg' %}" alt=""></div>
+                    <h3>Relatórios</h3>
+                    <p>
+                        Relatórios avançados em PDF e exportações agendadas, com a marca do seu cliente, prontos para
+                        enviar sem edição manual.
+                    </p>
+                </article>
+            </div>
+
+            <div class="modules-included">
+                <div class="modules-included-left">
+                    <div class="included-icon"><img src="{% static 'pages/images/icone_dashboard.svg' %}" alt=""></div>
+                    <div class="included-icon"><img src="{% static 'pages/images/icone_config.svg' %}" alt=""></div>
+                    <span>Dashboard e Configurações whitelabel</span>
+                </div>
+                <span class="included-badge">Incluso em todos os planos</span>
+            </div>
+        </section>
+
+        <!-- WHITELABEL -->
+        <section id="whitelabel" class="whitelabel">
+            <div class="container split">
+                <div>
+                    <span class="eyebrow">Whitelabel</span>
+                    <h2 class="section-title on-dark">A ferramenta é nossa. A marca é do seu cliente.</h2>
+                    <p class="section-lead">
+                        Configure a identidade visual uma vez por cliente e o produto passa a se comportar como se
+                        fosse desenvolvido internamente por ele.
+                    </p>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <img src="{% static 'pages/images/icone_check.svg' %}" alt="">
+                            <div>
+                                <strong>Logotipo e ícone próprios</strong>
+                                <span>Substituem a marca LeadStock em toda a interface, inclusive nos PDFs gerados.</span>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <img src="{% static 'pages/images/icone_check.svg' %}" alt="">
+                            <div>
+                                <strong>Paleta de cores da empresa</strong>
+                                <span>Sidebar, botões e gráficos seguem a cor de marca definida, como na prévia acima.</span>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <img src="{% static 'pages/images/icone_check.svg' %}" alt="">
+                            <div>
+                                <strong>Domínio e nome do produto</strong>
+                                <span>app.suaempresa.com.br, com o nome do produto que você quiser dar a ele.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="config-card">
+                    <span class="config-card-label">Configurações › Marca</span>
+                    <div class="config-rows">
+                        <div class="config-row">
+                            <span class="config-row-key">Nome do produto</span>
+                            <span class="config-row-val">SuaMarca CRM</span>
+                        </div>
+                        <div class="config-row">
+                            <span class="config-row-key">Logotipo</span>
+                            <span class="config-row-val"><span class="config-swatch-sq"></span> logo-suamarca.svg</span>
+                        </div>
+                        <div class="config-row">
+                            <span class="config-row-key">Cor de destaque</span>
+                            <span class="config-row-val"><span class="config-swatch-dot"></span> #635BFF</span>
+                        </div>
+                        <div class="config-row">
+                            <span class="config-row-key">Domínio</span>
+                            <span class="config-row-val"><img src="{% static 'pages/images/icone_globe.svg' %}" alt=""> app.suamarca.com.br</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMO FUNCIONA -->
+        <section id="como-funciona" class="container section">
+            <div class="section-header">
+                <span class="eyebrow">Como funciona</span>
+                <h2 class="section-title">Da configuração à entrega, em três passos.</h2>
+            </div>
+            <ol class="steps">
+                <li class="step">
+                    <span class="step-num">01</span>
+                    <h3>Escolha os módulos</h3>
+                    <p>Defina se o cliente precisa de WhatsApp, Estoque, Leads, Relatórios — ou de todos eles.</p>
+                </li>
+                <li class="step">
+                    <span class="step-num">02</span>
+                    <h3>Aplique a marca dele</h3>
+                    <p>Logotipo, cor de destaque, nome do produto e domínio próprio, direto em Configurações.</p>
+                </li>
+                <li class="step">
+                    <span class="step-num">03</span>
+                    <h3>Entregue como seu produto</h3>
+                    <p>O cliente acessa o CRM sem nunca ver o nome LeadStock — só a marca dele.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- PARA QUEM É -->
+        <section id="para-quem" class="audience-section">
+            <div class="container section">
+                <div class="section-header">
+                    <span class="eyebrow">Para quem é</span>
+                    <h2 class="section-title">Feito para quem revende, não só para quem usa.</h2>
+                </div>
+                <div class="audience-grid">
+                    <div class="audience-card">
+                        <img src="{% static 'pages/images/icone_agencias.svg' %}" alt="">
+                        <h3>Agências de marketing</h3>
+                        <p>Entregam métrica e atendimento como parte do pacote mensal, com a marca da agência.</p>
+                    </div>
+                    <div class="audience-card">
+                        <img src="{% static 'pages/images/icone_consultoria.svg' %}" alt="">
+                        <h3>Consultorias de CRM</h3>
+                        <p>Implantam um CRM completo em cada cliente sem manter equipe própria de desenvolvimento.</p>
+                    </div>
+                    <div class="audience-card">
+                        <img src="{% static 'pages/images/icone_erp.svg' %}" alt="">
+                        <h3>ERPs e softwares regionais</h3>
+                        <p>Adicionam CRM e atendimento ao portfólio sem construir esses módulos do zero.</p>
+                    </div>
+                    <div class="audience-card">
+                        <img src="{% static 'pages/images/icone_whatsapp.svg' %}" alt="">
+                        <h3>Integradores de WhatsApp</h3>
+                        <p>Transformam a API do WhatsApp em um produto de atendimento completo e vendável.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section id="cta" class="cta-section">
+            <div class="container">
+                <h2>Pronto para vender o seu próprio CRM?</h2>
+                <p>Agende uma demonstração e veja o LeadStock com a marca do seu cliente ainda na chamada.</p>
+                <div class="cta-actions">
+                    <a href="mailto:contato@leadstock.com.br" class="btn btn-primary btn-xl">Agendar demonstração</a>
+                    <a href="https://wa.me/5500000000000" class="btn btn-ghost-light btn-xl">
+                        <img src="{% static 'pages/images/icone_whatsapp.svg' %}" alt=""> Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-top">
+            <div>
+                <div class="brand">
+                    <div class="brand-badge" style="width:1.75rem;height:1.75rem;"><img src="{% static 'pages/images/icone_logo.svg' %}" alt=""></div>
+                    <span class="brand-name">LeadStock</span>
+                </div>
+                <p class="footer-desc">CRM whitelabel modular para quem revende métrica, atendimento e organização com a própria marca.</p>
+            </div>
+            <div>
+                <span class="footer-col-title">Produto</span>
+                <ul class="footer-links">
+                    <li><a href="#modulos">Módulos</a></li>
+                    <li><a href="#whitelabel">Whitelabel</a></li>
+                    <li><a href="#como-funciona">Como funciona</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-title">Contato</span>
+                <ul class="footer-links">
+                    <li><a href="mailto:contato@leadstock.com.br">contato@leadstock.com.br</a></li>
+                    <li><a href="https://wa.me/5500000000000">WhatsApp comercial</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> LeadStock. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'pages/js/landing.js' %}"></script>
+</body>
+
+</html>
