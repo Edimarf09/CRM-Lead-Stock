@@ -536,3 +536,22 @@ a, button {
 .config-row-val img { width: .9rem; height: .9rem; }
 
 .audience-card > img { width: 1.5rem; height: 1.5rem; display: block; }
+
+/* ------------------------------------------------------------
+   Ícones brancos sobre fundos escuros/coloridos.
+   Os SVGs do Font Awesome vêm pretos; este filtro força branco
+   apenas onde o fundo é escuro — assim você usa UM arquivo só
+   por ícone, sem precisar de versões duplicadas.
+   ------------------------------------------------------------ */
+.brand-badge img,
+.preview-sidebar-badge img,
+.preview-nav-item img,
+.chip.is-active img,
+.hero-cta .btn-primary img,
+.cta-actions .btn img,
+.feature-item > img {
+    filter: brightness(0) invert(1);
+}
+
+/* Itens inativos da sidebar da prévia ficam mais apagados */
+.preview-nav-item:not(.is-active) img { opacity: .55; }

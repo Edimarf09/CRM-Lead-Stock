@@ -19,7 +19,7 @@
     <header class="site-header">
         <div class="container">
             <div class="brand">
-                <div class="brand-badge"><img src="{% static 'pages/images/icone_logo.svg' %}" alt=""></div>
+                <div class="brand-badge"><img src="{% static 'images/icone_logo.svg' %}" alt=""></div>
                 <span class="brand-name">LeadStock</span>
             </div>
             <nav class="main-nav">
@@ -29,7 +29,7 @@
                 <a href="#para-quem">Para quem é</a>
             </nav>
             <div class="header-actions">
-                <a href="#" class="link-muted">Entrar</a>
+                <a href="{% url 'accounts:login' %}" class="link-muted">Entrar</a>
                 <a href="#cta" class="btn btn-primary">Agendar demonstração</a>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 </p>
                 <div class="hero-cta">
                     <a href="#cta" class="btn btn-primary btn-lg">
-                        Agendar demonstração <img src="{% static 'pages/images/icone_seta.svg' %}" alt="">
+                        Agendar demonstração <img src="{% static 'images/icone_seta.svg' %}" alt="">
                     </a>
                     <a href="#modulos" class="btn btn-outline btn-lg">Ver os módulos</a>
                 </div>
@@ -91,16 +91,16 @@
                         <div class="browser-body">
                             <aside class="preview-sidebar">
                                 <div class="preview-sidebar-head">
-                                    <span class="preview-sidebar-badge"><img src="{% static 'pages/images/icone_logo.svg' %}" alt=""></span>
+                                    <span class="preview-sidebar-badge"><img src="{% static 'images/icone_logo.svg' %}" alt=""></span>
                                     <span class="preview-sidebar-brand">SuaMarca</span>
                                 </div>
                                 <nav class="preview-nav">
-                                    <div class="preview-nav-item is-active"><img src="{% static 'pages/images/icone_dashboard.svg' %}" alt=""> Dashboard</div>
-                                    <div class="preview-nav-item" id="preview-nav-whatsapp"><img src="{% static 'pages/images/icone_whatsapp.svg' %}" alt=""> WhatsApp</div>
-                                    <div class="preview-nav-item" id="preview-nav-leads"><img src="{% static 'pages/images/icone_leads.svg' %}" alt=""> Leads</div>
-                                    <div class="preview-nav-item hidden" id="preview-nav-estoque"><img src="{% static 'pages/images/icone_estoque.svg' %}" alt=""> Estoque</div>
-                                    <div class="preview-nav-item hidden" id="preview-nav-relatorios"><img src="{% static 'pages/images/icone_relatorios.svg' %}" alt=""> Relatórios</div>
-                                    <div class="preview-nav-item"><img src="{% static 'pages/images/icone_config.svg' %}" alt=""> Config.</div>
+                                    <div class="preview-nav-item is-active"><img src="{% static 'images/icone_dashboard.svg' %}" alt=""> Dashboard</div>
+                                    <div class="preview-nav-item" id="preview-nav-whatsapp"><img src="{% static 'images/icone_whatsapp.svg' %}" alt=""> WhatsApp</div>
+                                    <div class="preview-nav-item" id="preview-nav-leads"><img src="{% static 'images/icone_leads.svg' %}" alt=""> Leads</div>
+                                    <div class="preview-nav-item hidden" id="preview-nav-estoque"><img src="{% static 'images/icone_estoque.svg' %}" alt=""> Estoque</div>
+                                    <div class="preview-nav-item hidden" id="preview-nav-relatorios"><img src="{% static 'images/icone_relatorios.svg' %}" alt=""> Relatórios</div>
+                                    <div class="preview-nav-item"><img src="{% static 'images/icone_config.svg' %}" alt=""> Config.</div>
                                 </nav>
                             </aside>
                             <div class="preview-main">
@@ -131,22 +131,22 @@
                     </div>
                     <div class="chips">
                         <button type="button" class="chip is-locked" disabled>
-                            <img src="{% static 'pages/images/icone_check.svg' %}" alt="">Dashboard
+                            <img src="{% static 'images/icone_check.svg' %}" alt="">Dashboard
                         </button>
                         <button type="button" class="chip is-active" data-module-toggle data-target="preview-nav-whatsapp" aria-pressed="true">
-                            <img src="{% static 'pages/images/icone_whatsapp.svg' %}" alt="">WhatsApp
+                            <img src="{% static 'images/icone_whatsapp.svg' %}" alt="">WhatsApp
                         </button>
                         <button type="button" class="chip is-active" data-module-toggle data-target="preview-nav-leads" aria-pressed="true">
-                            <img src="{% static 'pages/images/icone_leads.svg' %}" alt="">Leads
+                            <img src="{% static 'images/icone_leads.svg' %}" alt="">Leads
                         </button>
                         <button type="button" class="chip" data-module-toggle data-target="preview-nav-estoque" aria-pressed="false">
-                            <img src="{% static 'pages/images/icone_estoque.svg' %}" alt="">Estoque
+                            <img src="{% static 'images/icone_estoque.svg' %}" alt="">Estoque
                         </button>
                         <button type="button" class="chip" data-module-toggle data-target="preview-nav-relatorios" aria-pressed="false">
-                            <img src="{% static 'pages/images/icone_relatorios.svg' %}" alt="">Relatórios
+                            <img src="{% static 'images/icone_relatorios.svg' %}" alt="">Relatórios
                         </button>
                         <button type="button" class="chip is-locked" disabled>
-                            <img src="{% static 'pages/images/icone_check.svg' %}" alt="">Config.
+                            <img src="{% static 'images/icone_check.svg' %}" alt="">Config.
                         </button>
                     </div>
                 </div>
@@ -177,7 +177,7 @@
 
             <div class="modules-grid">
                 <article class="module-card">
-                    <div class="module-icon emerald"><img src="{% static 'pages/images/icone_whatsapp.svg' %}" alt=""></div>
+                    <div class="module-icon emerald"><img src="{% static 'images/icone_whatsapp.svg' %}" alt=""></div>
                     <h3>WhatsApp</h3>
                     <p>
                         Caixa de entrada omnichannel com WhatsApp, Instagram e e-mail centralizados, mais respostas
@@ -185,7 +185,7 @@
                     </p>
                 </article>
                 <article class="module-card">
-                    <div class="module-icon amber"><img src="{% static 'pages/images/icone_estoque.svg' %}" alt=""></div>
+                    <div class="module-icon amber"><img src="{% static 'images/icone_estoque.svg' %}" alt=""></div>
                     <h3>Estoque</h3>
                     <p>
                         Controle de estoque em tempo real com alertas de ruptura, conectado direto ao funil de vendas
@@ -193,7 +193,7 @@
                     </p>
                 </article>
                 <article class="module-card">
-                    <div class="module-icon blue"><img src="{% static 'pages/images/icone_leads.svg' %}" alt=""></div>
+                    <div class="module-icon blue"><img src="{% static 'images/icone_leads.svg' %}" alt=""></div>
                     <h3>Leads</h3>
                     <p>
                         Pipeline visual, captação multicanal e histórico completo de cada lead — do primeiro contato
@@ -201,7 +201,7 @@
                     </p>
                 </article>
                 <article class="module-card">
-                    <div class="module-icon rose"><img src="{% static 'pages/images/icone_relatorios.svg' %}" alt=""></div>
+                    <div class="module-icon rose"><img src="{% static 'images/icone_relatorios.svg' %}" alt=""></div>
                     <h3>Relatórios</h3>
                     <p>
                         Relatórios avançados em PDF e exportações agendadas, com a marca do seu cliente, prontos para
@@ -212,8 +212,8 @@
 
             <div class="modules-included">
                 <div class="modules-included-left">
-                    <div class="included-icon"><img src="{% static 'pages/images/icone_dashboard.svg' %}" alt=""></div>
-                    <div class="included-icon"><img src="{% static 'pages/images/icone_config.svg' %}" alt=""></div>
+                    <div class="included-icon"><img src="{% static 'images/icone_dashboard.svg' %}" alt=""></div>
+                    <div class="included-icon"><img src="{% static 'images/icone_config.svg' %}" alt=""></div>
                     <span>Dashboard e Configurações whitelabel</span>
                 </div>
                 <span class="included-badge">Incluso em todos os planos</span>
@@ -232,21 +232,21 @@
                     </p>
                     <ul class="feature-list">
                         <li class="feature-item">
-                            <img src="{% static 'pages/images/icone_check.svg' %}" alt="">
+                            <img src="{% static 'images/icone_check.svg' %}" alt="">
                             <div>
                                 <strong>Logotipo e ícone próprios</strong>
                                 <span>Substituem a marca LeadStock em toda a interface, inclusive nos PDFs gerados.</span>
                             </div>
                         </li>
                         <li class="feature-item">
-                            <img src="{% static 'pages/images/icone_check.svg' %}" alt="">
+                            <img src="{% static 'images/icone_check.svg' %}" alt="">
                             <div>
                                 <strong>Paleta de cores da empresa</strong>
                                 <span>Sidebar, botões e gráficos seguem a cor de marca definida, como na prévia acima.</span>
                             </div>
                         </li>
                         <li class="feature-item">
-                            <img src="{% static 'pages/images/icone_check.svg' %}" alt="">
+                            <img src="{% static 'images/icone_check.svg' %}" alt="">
                             <div>
                                 <strong>Domínio e nome do produto</strong>
                                 <span>app.suaempresa.com.br, com o nome do produto que você quiser dar a ele.</span>
@@ -272,7 +272,7 @@
                         </div>
                         <div class="config-row">
                             <span class="config-row-key">Domínio</span>
-                            <span class="config-row-val"><img src="{% static 'pages/images/icone_globe.svg' %}" alt=""> app.suamarca.com.br</span>
+                            <span class="config-row-val"><img src="{% static 'images/icone_globe.svg' %}" alt=""> app.suamarca.com.br</span>
                         </div>
                     </div>
                 </div>
@@ -313,22 +313,22 @@
                 </div>
                 <div class="audience-grid">
                     <div class="audience-card">
-                        <img src="{% static 'pages/images/icone_agencias.svg' %}" alt="">
+                        <img src="{% static 'images/icone_agencias.svg' %}" alt="">
                         <h3>Agências de marketing</h3>
                         <p>Entregam métrica e atendimento como parte do pacote mensal, com a marca da agência.</p>
                     </div>
                     <div class="audience-card">
-                        <img src="{% static 'pages/images/icone_consultoria.svg' %}" alt="">
+                        <img src="{% static 'images/icone_consultoria.svg' %}" alt="">
                         <h3>Consultorias de CRM</h3>
                         <p>Implantam um CRM completo em cada cliente sem manter equipe própria de desenvolvimento.</p>
                     </div>
                     <div class="audience-card">
-                        <img src="{% static 'pages/images/icone_erp.svg' %}" alt="">
+                        <img src="{% static 'images/icone_erp.svg' %}" alt="">
                         <h3>ERPs e softwares regionais</h3>
                         <p>Adicionam CRM e atendimento ao portfólio sem construir esses módulos do zero.</p>
                     </div>
                     <div class="audience-card">
-                        <img src="{% static 'pages/images/icone_whatsapp.svg' %}" alt="">
+                        <img src="{% static 'images/icone_whatsapp.svg' %}" alt="">
                         <h3>Integradores de WhatsApp</h3>
                         <p>Transformam a API do WhatsApp em um produto de atendimento completo e vendável.</p>
                     </div>
@@ -344,7 +344,7 @@
                 <div class="cta-actions">
                     <a href="mailto:contato@leadstock.com.br" class="btn btn-primary btn-xl">Agendar demonstração</a>
                     <a href="https://wa.me/5500000000000" class="btn btn-ghost-light btn-xl">
-                        <img src="{% static 'pages/images/icone_whatsapp.svg' %}" alt=""> Falar no WhatsApp
+                        <img src="{% static 'images/icone_whatsapp.svg' %}" alt=""> Falar no WhatsApp
                     </a>
                 </div>
             </div>
@@ -355,7 +355,7 @@
         <div class="container footer-top">
             <div>
                 <div class="brand">
-                    <div class="brand-badge" style="width:1.75rem;height:1.75rem;"><img src="{% static 'pages/images/icone_logo.svg' %}" alt=""></div>
+                    <div class="brand-badge" style="width:1.75rem;height:1.75rem;"><img src="{% static 'images/icone_logo.svg' %}" alt=""></div>
                     <span class="brand-name">LeadStock</span>
                 </div>
                 <p class="footer-desc">CRM whitelabel modular para quem revende métrica, atendimento e organização com a própria marca.</p>

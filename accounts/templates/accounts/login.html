@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadStock — Login</title>
+
+    <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
+</head>
+
+<body>
+
+    <main class="login-layout">
+
+        <!-- Lado esquerdo: apresentação -->
+        <section class="login-aside">
+            <div>
+                <div class="aside-brand">
+                    <span class="aside-brand-badge">
+                        <img src="{% static 'images/icone_logo.svg' %}" alt="">
+                    </span>
+                    <span>LeadStock</span>
+                </div>
+
+                <h1 class="aside-title">
+                    Gerencie leads. Venda mais. Organize <span class="accent">tudo.</span>
+                </h1>
+
+                <p class="aside-lead">
+                    CRM completo com gestão de estoque, chat omnichannel e inteligência artificial para transformar
+                    conversas em resultados.
+                </p>
+
+                <ul class="aside-features">
+                    <li class="aside-feature">
+                        <span class="aside-feature-icon">
+                            <img src="{% static 'images/icone_whatsapp.svg' %}" alt="">
+                        </span>
+                        <strong>Chat Omnichannel</strong>
+                        <p>WhatsApp, Instagram, E-mail e muito mais em um só lugar.</p>
+                    </li>
+                    <li class="aside-feature">
+                        <span class="aside-feature-icon">
+                            <img src="{% static 'images/icone_ia.svg' %}" alt="">
+                        </span>
+                        <strong>IA que trabalha por você</strong>
+                        <p>Responda automaticamente fora do horário comercial e nunca perca oportunidades.</p>
+                    </li>
+                    <li class="aside-feature">
+                        <span class="aside-feature-icon">
+                            <img src="{% static 'images/icone_estoque.svg' %}" alt="">
+                        </span>
+                        <strong>Estoque inteligente</strong>
+                        <p>Controle seu estoque, receba alertas e evite perdas.</p>
+                    </li>
+                    <li class="aside-feature">
+                        <span class="aside-feature-icon">
+                            <img src="{% static 'images/icone_relatorios.svg' %}" alt="">
+                        </span>
+                        <strong>Relatórios e métricas</strong>
+                        <p>Acompanhe resultados e tome decisões com dados reais.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Prévia decorativa do sistema -->
+            <div class="aside-preview" aria-hidden="true">
+                <div class="aside-preview-bar"></div>
+                <div class="aside-preview-grid">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="aside-preview-block"></div>
+            </div>
+        </section>
+
+        <!-- Lado direito: formulário -->
+        <section class="login-panel">
+            <div class="login-card">
+                <h2 class="login-title">Bem-vindo de volta!</h2>
+                <p class="login-subtitle">Faça login para acessar sua conta</p>
+
+                <form method="post" class="login-form">
+                    {% csrf_token %}
+
+                    <div class="field">
+                        <label for="id_username">E-mail</label>
+                        <input type="text" id="id_username" name="username" placeholder="seu@email.com"
+                               autocomplete="username" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="id_password">Senha</label>
+                        <input type="password" id="id_password" name="password" placeholder="••••••••"
+                               autocomplete="current-password" required>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember">
+                            <input type="checkbox" name="remember">
+                            Lembrar de mim
+                        </label>
+                        <a href="#" class="forgot-link">Esqueci minha senha</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Entrar</button>
+                </form>
+
+                <div class="divider"><span>ou entre com</span></div>
+
+                <div class="social-buttons">
+                    <button type="button" class="btn-social">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.2-2.27H12v4.51h6.47c-.28 1.48-1.13 2.73-2.4 3.58v2.98h3.88c2.27-2.09 3.54-5.17 3.54-8.8z" />
+                            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.92l-3.88-2.98c-1.08.72-2.45 1.15-4.05 1.15-3.11 0-5.75-2.1-6.69-4.92H1.3v3.09C3.26 21.3 7.31 24 12 24z" />
+                            <path fill="#FBBC05" d="M5.31 14.33c-.24-.72-.38-1.49-.38-2.28s.14-1.56.38-2.28V6.68H1.3A11.95 11.95 0 0 0 0 12.05c0 1.93.46 3.76 1.3 5.37l4.01-3.09z" />
+                            <path fill="#EA4335" d="M12 4.75c1.76 0 3.34.6 4.58 1.79l3.44-3.44C17.94 1.2 15.24 0 12 0 7.31 0 3.26 2.7 1.3 6.68l4.01 3.09c.94-2.82 3.58-4.92 6.69-4.92z" />
+                        </svg>
+                        Entrar com Google
+                    </button>
+                    <button type="button" class="btn-social">
+                        <svg viewBox="0 0 23 23" aria-hidden="true">
+                            <path fill="#F35325" d="M1 1h10v10H1z" />
+                            <path fill="#81BC06" d="M12 1h10v10H12z" />
+                            <path fill="#05A6F0" d="M1 12h10v10H1z" />
+                            <path fill="#FFBA08" d="M12 12h10v10H12z" />
+                        </svg>
+                        Entrar com Microsoft
+                    </button>
+                </div>
+
+                <p class="signup-note">
+                    Ainda não tem uma conta?
+                    <a href="#">Fale com nosso time</a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> LeadStock. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="{% static 'accounts/js/login.js' %}"></script>
+</body>
+
+</html>
